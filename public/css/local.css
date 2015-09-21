@@ -1,0 +1,222 @@
+/*bootstrap/jumbotrop over-wites*/
+body{
+	background:url(../../img/bgTemp.jpg) center top no-repeat;/*TEMP*/
+	font-family: 'Rokkitt', serif;
+}
+
+
+
+.h3, h3{
+	margin-top:0px;
+	font-size:38px;
+	font-weight: 700;
+}
+.h4, .h5, .h6, h4, h5, h6{
+	margin-bottom:6px;
+
+}
+.h4, h4{
+	color:#007681;
+}
+.h5, h5{
+	color:#007681;
+	font-size:20px;
+}
+
+
+.container{
+	max-width:1022px;
+	
+}
+
+.jumbotron{
+	background:#dedfdf;
+	
+	border:1px solid #afafb0;
+
+	
+}
+
+.container .jumbotron{
+	border-radius:8px;
+	padding:0px;
+}
+
+.marketing{
+	margin-top:0px;
+
+}
+
+.input-group .form-control:last-child{
+	border-radius:8px;
+	height:33px;
+	color:#131e29;
+}
+.jumbotron .btn{
+	padding:0px;
+	padding-left:15px;
+	padding-right:10px;
+	border-radius:8px;
+	height:33px;
+	width:222px;
+	text-align:left;
+	color:#131e29;
+
+}
+
+
+/*local  css */
+.titleShift{
+	padding-left:15px;
+}
+.box-inner-txt{
+	text-align:left;
+	
+
+}
+
+.logo_TopLeft{
+	background:url(../../img/logo_LH_01.jpg) no-repeat;
+	width:117px;
+	height:117px;
+}
+.logo_TopRight{
+	background:url(../../img/logo_RH_01.jpg) no-repeat;
+	width:196px;
+	height:117px;
+	float:right;
+}
+.clearNoborder{
+	border:none;
+}
+.headerTXT_LH{
+	float:left;
+	padding-left:20px;
+
+}
+.headerTXT_RH{
+	float:right;
+	height:100px;
+}
+.headerTXT_RH div{
+	float:right;
+	display:block;
+
+}
+
+.headerTXT_RH .oppNum{
+	font-size:92px;
+	padding-right:33px;
+}
+.headerTXT_RH .oppTxt{
+	font-size:24px;
+	color:#007681;
+	padding-top:40px;
+	padding-right:22px;
+}
+
+/* form */
+.txtBoxWrap{
+	width:100%;
+	height:auto;
+	display:block;
+	float:left;
+	padding-top:10px;
+}
+.txtBoxLabel{
+	color:#007681;
+	font-size:22px;
+	display:block;
+	float:left;
+	padding-left:5px;
+}
+.txtBoxBox{
+	color:#131e29;
+	font-size:22px;
+	display:block;
+	float:right;
+	width:222px;
+}
+.txtBoxNum{
+	color:#131e29;
+	font-size:22px;
+	display:block;
+	float:right;
+	width:72px;
+	margin-right:150px;
+	margin-bottom:10px;
+}
+.txtH1{
+	font-weight:700;
+}
+.txtH2{
+	font-weight:700;
+	font-size:22px;
+}
+
+.txtRH_1{
+	padding-top:10px;
+	width:230px;
+	float:left;
+
+}
+.txtRH_2{
+	background:#c3d5d6;
+	padding-top:10px;
+	width:165px;
+	height:100%;
+	float:left;
+}
+.txtRH_3{
+	padding-top:10px;
+	width:20px;
+	float:left;
+}
+/* radio buttons */
+
+.radioList{
+	list-style: none;
+	margin-bottom:100px;
+}
+
+label {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-right: 15px;
+    font-size: 16px;
+}
+
+input[type=radio],input[type=checkbox] {
+    display: none;
+}
+label:before {
+    content: "";
+    display: inline-block;
+ 
+    width: 16px;
+    height: 16px;
+ 
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 1px;
+    background-color: #aaa;
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+.radioList label:before {
+    border-radius: 8px;
+}
+
+input[type=radio]:checked + label:before,
+input[type=checkbox]:checked + label:before {
+    /*content: "\2022";*/
+    background:#0b9caa;
+    color: #f3f3f3;
+    font-size: 30px;
+    text-align: center;
+    line-height: 18px;
+}
+
+
