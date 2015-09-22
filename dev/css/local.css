@@ -111,7 +111,6 @@ body{
 .headerTXT_RH .oppNum{
 	font-size:92px;
 	padding-right:33px;
-
 }
 .headerTXT_RH .oppTxt{
 	font-size:24px;
@@ -179,7 +178,7 @@ body{
 }
 /* radio buttons */
 
-.radioList,.tableList{
+.radioList{
 	list-style: none;
 	margin-bottom:70px;
 }
@@ -202,8 +201,6 @@ label:before {
  
     width: 16px;
     height: 16px;
-
-
  
     margin-right: 10px;
     position: absolute;
@@ -214,10 +211,6 @@ label:before {
 }
 .radioList label:before {
     border-radius: 8px;
-}
-.tableList label:before {
-    border-radius: 8px;
-
 }
 
 input[type=radio]:checked + label:before,
@@ -231,14 +224,7 @@ input[type=checkbox]:checked + label:before {
 }
 /* table */
 .tRowHead{
-	
-
-
-}
-.tRowHead th{
 	height:70px;
-	padding-top:40px;
-	padding-left:10px;
 }
 
 .tHead{
@@ -246,29 +232,7 @@ input[type=checkbox]:checked + label:before {
 	-webkit-transform: rotate(-45deg);
 	-moz-transform: rotate(-45deg);
 	-ms-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
 
-	-webkit-transform-origin: 0% 100%;
-	-moz-transform-origin: 0% 100%;
-	-ms-transform-origin: 0% 100%;
-	-o-transform-origin: 0% 100%;
-	transform-origin: 0% 100%;
-
-	
-	color:#007681;
-	float:left;
-
-
-
-}
-
-.tRowBody{
-
-}
-.checkTable div {
-	padding-top:5px;
-	height:10px;
 }
 
 .tRowFoot{
