@@ -1,6 +1,6 @@
 /*bootstrap/jumbotron over-wites*/
 body{
-	background:url(../../img/bgTemp.jpg) center top no-repeat;/*TEMP*/
+	/*background:url(../../img/bgTemp.jpg) center top no-repeat;*/
 	font-family: 'Rokkitt', serif;
 }
 
@@ -40,6 +40,7 @@ body{
 .container .jumbotron{
 	border-radius:8px;
 	padding:0px;
+	/*opacity:0.6;*/
 }
 
 .marketing{
@@ -157,6 +158,7 @@ body{
 .txtH2{
 	font-weight:700;
 	font-size:22px;
+	padding-left:8px;
 }
 
 .txtRH_1{
@@ -183,6 +185,9 @@ body{
 	list-style: none;
 	margin-bottom:70px;
 }
+.radioList{
+	padding-left:8px;
+}
 
 label {
     display: inline-block;
@@ -203,13 +208,11 @@ label:before {
     width: 16px;
     height: 16px;
 
-
- 
     margin-right: 10px;
     position: absolute;
     left: 0;
     bottom: 1px;
-    background-color: #aaa;
+    /*background-color: #aaa;*/
     box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
 .radioList label:before {
@@ -220,6 +223,7 @@ label:before {
 
 }
 
+
 input[type=radio]:checked + label:before,
 input[type=checkbox]:checked + label:before {
     /*content: "\2022";*/
@@ -229,16 +233,55 @@ input[type=checkbox]:checked + label:before {
     text-align: center;
     line-height: 18px;
 }
-/* table */
-.tRowHead{
-	
+/*custom icons*/
 
-
+.icons{
+	width: 16px;
+    height: 16px;
+	border-radius: 8px;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
-.tRowHead th{
+
+.wOn{
+	background:url(../../svg/webLink.svg) no-repeat;
+}
+.wOff{
+	background:url(../../svg/webLink_on.svg) no-repeat;
+}
+
+
+.edOn{
+	background:url(../../svg/eDit.svg) no-repeat;
+}
+.edOff{
+	background:url(../../svg/eDit_on.svg) no-repeat;
+}
+
+
+.ukOn,.ukOff{
+	background:url(../../svg/flag_uk.svg) no-repeat;
+}
+
+
+/* table */
+
+.tableBox{
+	background:url(../../img/tableBg.jpg) repeat-y;
+}
+
+.tRowHead {
 	height:70px;
 	padding-top:40px;
 	padding-left:10px;
+}
+.tRow{
+	height:1px;
+
+}
+.tLine{
+	border-top:1px solid #afafb0;
+	padding-bottom:5px;
+	
 }
 
 .tHead{
@@ -263,8 +306,52 @@ input[type=checkbox]:checked + label:before {
 
 }
 
-.tRowBody{
+.col{
+	float:left;
+	display:block;
 
+}
+.col1{
+	width:230px;
+}
+.col2{
+	width:280px;
+}
+.col3{
+	width:25px;
+}
+.col4{
+	width:70px;
+}
+.col5{
+	width:130px;
+}
+.col6{
+	width:170px;
+	padding-top:5px;
+}
+.cellCol{
+	/*background:#fff;*/
+}
+.col6 .cluster,.col7 .cluster{
+	width:20px;
+	display:block;
+	float:left;
+
+}
+.col7{
+	width:40px;
+}
+.col7 .norm{
+	width:16px;
+	margin-right:4px;
+	display:block;
+	float:left;
+}
+
+.tRowBody{
+	display:block;
+	cursor:pointer;
 }
 .checkTable div {
 	padding-top:5px;
@@ -272,10 +359,90 @@ input[type=checkbox]:checked + label:before {
 }
 
 .tRowFoot{
+
 	height:70px;
 }
 .tFoot{
-	opacity:0;
+	
 }
+/* interactive*/
+accordion{
+	border:none;
+	
+}
+accordion-heading{
+	/*background:#000;
+	height:20px;*/
+	border:none;
+	
+}
+/* bootstrap overwrites */
+
+
+
+.panel-default>.panel-heading{
+	background:none;
+}
+.panel-heading{
+	padding:0px;
+
+}
+.panel{
+	background:none;
+	border:none;
+}
+.panel-group{
+	margin-bottom:10px;
+}
+.panel-body{
+	padding:0px;
+	padding-top:20px;
+}
+
+/* inner panel */
+.accInner{
+	width:958px;
+	min-height:250px;/*300*/
+	background-color:#fff;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+	padding:10px;
+	font-size:17px;
+}
+.accInnerL{
+	width:485px;
+	float:left;
+	padding-right:20px;
+}
+.accInnerR{
+	width:428px;
+	float:left;
+}
+.accHeader{
+	color:#007681;
+}
+.descTxt{
+	font-size:12px;
+	line-height: 12px;
+	padding-right:30px;
+}
+.miniTable{
+	font-size:12px;
+}
+
+.miniRow{
+	width:100%;
+	float:left;
+}
+.miniCol{
+	float:left;
+	padding-right:10px;
+	width:80px;
+}
+.he{
+	font-weight:700;
+}
+
+
 
 

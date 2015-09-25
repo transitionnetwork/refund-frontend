@@ -1,5 +1,7 @@
 //angular
-var app = angular.module('myApp', ['ngAnimate', 'ui.bootstrap']);
+var app = angular.module('myApp', 
+            ['ngAnimate', 
+            'ui.bootstrap']);
 /*
 app.controller('AccordionDemoCtrl', function ($scope) {
   $scope.oneAtATime = true;
@@ -37,8 +39,14 @@ app.controller('AccordionDemoCtrl', function ($scope) {
 
 app.controller('appCtrl',function($scope, $http) {
 
+    //JSON CALL
     $scope.dataSet = [];
     $scope.dataLength = 0;
+
+    //MAIN VARIABLES
+    $scope.icons = {};
+    $scope.icons.webLink = false;
+    $scope.icons.eDit = false;
 
 
 
@@ -50,6 +58,14 @@ app.controller('appCtrl',function($scope, $http) {
 
         }).success(function(data, status) {
             $scope.dataSet = data.data;
+            //map data to names
+            /*
+            data.data[0].forEach(function(v,i){
+                console.log("data:: " + v.name)
+            });
+*/
+
+
             $scope.dataLength = $scope.dataSet.length;
         });
 
@@ -57,25 +73,53 @@ app.controller('appCtrl',function($scope, $http) {
 
     //
     $scope.loadData();
+    //
+    
+    $scope.oneAtATime = true;
+    $scope.acc1open = false;
+    $scope.acc2open = true;
+    $scope.accOpen = {};
+    $scope.accOpen[0] = false;
+    $scope.accOpen[1] = true;
+    $scope.accOpen[2] = false;
+    $scope.accOpen[3] = false;
+
+    //$scope.acc1open = false;
+    //$scope.acc2open = true;
+
+/*
+    $scope.$watch('acc1open', function(){
+
+      console.log("watch acc1:" +$scope.acc1open);
+      alert("watch acc1:" +$scope.acc1open);
+       
+  }, true);
+*/
+/*
+    $scope.$watch('accOpen', function(nV,oV){
+          console.log("watch accOpen:" +$scope.accOpen + " nV: " + nV[0] + " oV ->" + oV[0] + " -> " );
+      }, true);
+*/
+
+    //
+    $scope.select= function(index) {
+       //$scope.selected = index; 
+       
+       if($scope.accOpen[index] == true){
+            $scope.accOpen[index] = false;
+       }else{
+            $scope.accOpen[index] = true;
+       }
+        
+       console.log("SELECT: i: " + index + " " + $scope.accOpen[index]);
+       
+    };
 
 });
 
-app.directive("checkboxGroup", function() {
-        return {
-            restrict: "A",
-            link: function(scope, elem, attrs) {
 
-                if (attrs.name == "true") {
-                    elem[0].checked = true;
-                }else{
-                    elem[0].unchecked = true;
-                }
-                //elem[0].checked = true;
-                
-            }//end return;
 
-        }
-    });//end directive
+
 
 
 
