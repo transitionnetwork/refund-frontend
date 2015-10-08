@@ -1,151 +1,139 @@
 //angular
 var app = angular.module('myApp', 
             ['ngAnimate', 
-            'ui.bootstrap']);
-/*
-app.controller('AccordionDemoCtrl', function ($scope) {
-  $scope.oneAtATime = true;
+            'ui.bootstrap',
+            'ngSanitize',
+            'angucomplete',
+            'angularSpinner']);
 
-  $scope.groups = [
-    {
-      title: 'Dynamic Group Header - 1',
-      content: 'Dynamic Group Body - 1'
-    },
-    {
-      title: 'Dynamic Group Header - 2',
-      content: 'Dynamic Group Body - 2'
-    }
-  ];
-
-  $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-  $scope.addItem = function() {
-    var newItemNo = $scope.items.length + 1;
-    $scope.items.push('Item ' + newItemNo);
-  };
-
-  $scope.status = {
-    isFirstOpen: true,
-    isFirstDisabled: false
-  };
-});
-*/
 //
+app.config(function(usSpinnerConfigProvider){
 
-//http://jsfiddle.net/t7kr8/211/ -- for update()
-//http://jsfiddle.net/mjaric/pj5br/ --  basic loading
+    usSpinnerConfigProvider.setDefaults({
+            color: '#007681',
+            radius:18,
+            width:18,
+            lines:7,
+            length: 0,
+            top:'80%',
+            left:'50%'
+            });
+  });
 
-//https://angular-ui.github.io/bootstrap/ -- accordian
+//MAIN CONTROLLER///////////////
+app.controller('appCtrl',function($scope, 
+                                  $http, 
+                                  $log,
+                                  $filter,
+                                  $interval,
+                                  usSpinnerService
+                                  ) {
 
-app.controller('appCtrl',function($scope, $http) {
+    //MAIN VARIABLES
 
     //JSON CALL
     $scope.dataSet = [];
     $scope.dataLength = 0;
 
-    //MAIN VARIABLES
+    //ICONS
     $scope.icons = {};
     $scope.icons.webLink = false;
     $scope.icons.eDit = false;
 
+    //CHECBOX MODEL//  
+    $scope.checkboxModel = {};
+
+    $scope.checkboxModel.grant = true;
+    $scope.checkboxModel.debt = true;
+    $scope.checkboxModel.equity = true;
+    $scope.checkboxModel.support = true;
+    $scope.checkboxModel.platform = true;
+    $scope.checkboxModel.legislation = true;
+    $scope.checkboxModel.profit = true;
+    $scope.checkboxModel.nonprofit = true;
+    
+    //MAIN SCREEN LISTS
+    $scope.empList = {};
+    $scope.countryList = {};
+
+    //MAIN SELECTOR SET UP
+    $scope.selector = {};
+
+    var filterWords=["name",
+                     "provider",
+                     "countries",
+                     "description",
+                     "max"];
+
+    filterWords.forEach(function(d,i){
+                    $scope.selector[d] = "";
+                });
+    
+    $scope.sreenResNum = 0;
+    
+    //WATCHERS////////////////////
+
+    $scope.$watch('results.length',function(nV,oV){
+        $scope.sreenResNum = nV ;
+    });
+
+    //FUNCTIONS//////////////////////////
+
+    //UPDATE SELECTOR MODEL///     
+    $scope.updateIt2 = function(_key,_item){
+        if(_item == "All"){
+            $scope.selector = {};
+        }else{
+            $scope.selector[_key] = _item;
+        }
+
+    }
 
 
-    $scope.loadData = function() {
+    //MAIN API CALL
+    $scope.loadData = function(_url,_name) {
         var httpRequest = $http({
             method: 'GET',
-            url: '../data/test_03.json'//,
-            //data: mockDataForThisTest
+            url: _url//,
 
         }).success(function(data, status) {
-            $scope.dataSet = data.data;
-            //map data to names
-            /*
-            data.data[0].forEach(function(v,i){
-                console.log("data:: " + v.name)
-            });
-*/
+                
+                switch(_name){
+                  case "main":
+                      $scope.empList = data;
 
+                      $scope.dataLength = $scope.empList.length;
+                      
+                      usSpinnerService.stop('spinner-1');
+                      
+                  break; 
+                  case "countries":
+                      var rawData = data.data;
+                      
+                      rawData.unshift({"name":"All"});
 
-            $scope.dataLength = $scope.dataSet.length;
-        });
+                      $scope.countryList = rawData;
+                      
+                  break; 
+                }
 
-    };
+                });
 
-    //
-    $scope.loadData();
-    //
-    
-    $scope.oneAtATime = true;
-    $scope.acc1open = false;
-    $scope.acc2open = true;
-    $scope.accOpen = {};
-    $scope.accOpen[0] = false;
-    $scope.accOpen[1] = true;
-    $scope.accOpen[2] = false;
-    $scope.accOpen[3] = false;
-
-    //$scope.acc1open = false;
-    //$scope.acc2open = true;
-
-/*
-    $scope.$watch('acc1open', function(){
-
-      console.log("watch acc1:" +$scope.acc1open);
-      alert("watch acc1:" +$scope.acc1open);
-       
-  }, true);
-*/
-/*
-    $scope.$watch('accOpen', function(nV,oV){
-          console.log("watch accOpen:" +$scope.accOpen + " nV: " + nV[0] + " oV ->" + oV[0] + " -> " );
-      }, true);
-*/
-
-    //
-    $scope.select= function(index) {
-       //$scope.selected = index; 
-       
-       if($scope.accOpen[index] == true){
-            $scope.accOpen[index] = false;
-       }else{
-            $scope.accOpen[index] = true;
-       }
         
-       console.log("SELECT: i: " + index + " " + $scope.accOpen[index]);
-       
     };
+
+    //INNIT/////////////////////////////////////////////////////
+    var countryListUrl = 'http://178.62.93.215/v1/countries';
+    var mainAPIUrl = 'http://178.62.93.215/v1/funds?format=frontend'
+
+    $scope.loadData(mainAPIUrl,"main");
+    //
+    $scope.loadData(countryListUrl,"countries");
+    //
+    usSpinnerService.spin('spinner-1');
+   
 
 });
 
 
 
-
-
-
-
-/*jquery/datatable
-$(document).ready(function() {
-    console.log("HERE!");
-
-        var _data = $('#example').DataTable( {
-                "ajax": "data/test_01.json",
-                "columns": [
-                    { "data": "Provider" },
-                    { "data": "Fund" },
-                    { "data": "Region" },
-                    { "data": "Date" },
-                    { "data": "State" },
-                    { "data": "Grant" },
-                    { "data": "Debt" },
-                    { "data": "Equity" },
-                    { "data": "Support" },
-                    { "data": "Platform" },
-                    { "data": "Legislation" },
-                    { "data": "Weblink" },
-                    { "data": "Edit" }
-                ]
-            } );
-
-    console.log("SET: " + JSON.stringify(_data));
-} );//end document ready
-*/

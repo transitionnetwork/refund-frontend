@@ -2,6 +2,7 @@
 body{
 	/*background:url(../../img/bgTemp.jpg) center top no-repeat;*/
 	font-family: 'Rokkitt', serif;
+	padding:0px;
 }
 
 
@@ -64,6 +65,15 @@ body{
 	color:#131e29;
 
 }
+/*drop down */
+
+.btn-primary{
+	background-color:#fff;
+	border-color:#ccc;
+}
+.btn-default{
+	border-color:#ccc;
+}
 
 
 /*local  css */
@@ -81,34 +91,54 @@ body{
 }
 
 .logo_TopLeft{
-	background:url(../../img/logo_LH_01.jpg) no-repeat;
-	width:117px;
-	height:117px;
+	/*background:url(../../img/logo_LH_01.jpg) no-repeat;*/
+	width:600px;
+	height:50px;
+	
+	font-size:36px;
+}
+.reTxt{
+	font-size:28px;
+	color:#999;
+}
+
+.reLogo{
+	color:#007681;
+	font-weight: 700;
+}
+.reLogo2{
+	color:#000;
+	font-weight: 700;
 }
 .logo_TopRight{
-	background:url(../../img/logo_RH_01.jpg) no-repeat;
-	width:196px;
-	height:117px;
+	background:url(../../img/logo_RH_01.jpg) 0px 5px no-repeat;
+	width:102px;
+	height:50px;
 	float:right;
 }
 .clearNoborder{
 	border:none;
 }
+.btmBorder{
+	border-bottom:1px solid #dedfdf ;
+	padding-left:0px;
+}
 .headerTXT_LH{
 	float:left;
 	padding-left:20px;
+	/*padding-top:65px;*/
 
 }
 .headerTXT_RH{
 	float:right;
-	height:100px;
+	/*height:100px;*/
 }
 .headerTXT_RH div{
 	float:right;
 	display:block;
 
 }
-
+/*
 .headerTXT_RH .oppNum{
 	font-size:92px;
 	padding-right:33px;
@@ -120,8 +150,13 @@ body{
 	padding-top:40px;
 	padding-right:22px;
 }
+*/
 
 /* form */
+.btmBox{
+	margin-bottom:20px;
+}
+
 .txtBoxWrap{
 	width:100%;
 	height:auto;
@@ -138,20 +173,40 @@ body{
 }
 .txtBoxBox{
 	color:#131e29;
-	font-size:22px;
+	/*font-size:22px;*/
 	display:block;
 	float:right;
 	width:222px;
+}
+.txtBoxNumWrap{
+	padding-top:15px;
 }
 .txtBoxNum{
 	color:#131e29;
 	font-size:22px;
 	display:block;
-	float:right;
-	width:72px;
-	margin-right:150px;
-	margin-bottom:10px;
+	float:left;
+	width:200px;
+
+	/*margin-right:150px;
+	margin-bottom:10px;*/
 }
+.oppFound{
+	width:200px;
+	display:block;
+	float:left;
+	font-size:20px;
+	padding-top:20px;
+}
+.inputWrap1{
+	width:220px;
+	display:block;
+	float:left;
+}
+.topTxt{
+	width:245px;
+}
+
 .txtH1{
 	font-weight:700;
 }
@@ -168,7 +223,7 @@ body{
 
 }
 .txtRH_2{
-	background:#c3d5d6;
+	/*background:#c3d5d6;*/
 	padding-top:10px;
 	width:165px;
 	height:100%;
@@ -183,7 +238,7 @@ body{
 
 .radioList,.tableList{
 	list-style: none;
-	margin-bottom:70px;
+	
 }
 .radioList{
 	padding-left:8px;
@@ -235,11 +290,25 @@ input[type=checkbox]:checked + label:before {
 }
 /*custom icons*/
 
+.headTxt_01{
+	font-size:38px;
+}
+.headTxt_02{
+	font-size:24px;
+}
+
+
+.iconWrap{
+	width:100%;
+}
 .icons{
 	width: 16px;
     height: 16px;
 	border-radius: 8px;
 	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+	float:left;
+	display:block;
+	margin-right:3px;
 }
 
 .wOn{
@@ -261,8 +330,45 @@ input[type=checkbox]:checked + label:before {
 .ukOn,.ukOff{
 	background:url(../../svg/flag_uk.svg) no-repeat;
 }
-
-
+.waleOn,.waleOff{
+	background:url(../../svg/flag_wale.svg) no-repeat;
+}
+.ireOn,.ireff{
+	background:url(../../svg/flag_ire.svg) no-repeat;
+}
+.engOn,.engOff{
+	background:url(../../svg/flag_eng.svg) no-repeat;
+}
+.scotOn,.scotOff{
+	background:url(../../svg/flag_scot.svg) no-repeat;
+}
+.eAfricOn,.eAfricOff{
+	background:url(../../svg/flag_e_africa.svg) no-repeat;
+}
+.AfricOn,.AfricOff{
+	background:url(../../svg/flag_africa.svg) no-repeat;
+}
+.indiOn,.indiOff{
+	background:url(../../svg/flag_india.svg) no-repeat;
+}
+.pakOn,.pakOff{
+	background:url(../../svg/flag_pakistan.svg) no-repeat;
+}
+.denOn,.denOff{
+	background:url(../../svg/flag_denmark.svg) no-repeat;
+}
+.swedOn,.swedOff{
+	background:url(../../svg/flag_sweden.svg) no-repeat;
+}
+.holOn,.holOff{
+	background:url(../../svg/flag_holland.svg) no-repeat;
+}
+.usOn,.usOff{
+	background:url(../../svg/flag_us.svg) no-repeat;
+}
+.defaultFlag{
+	background:url(../../svg/flag_default.svg) no-repeat;
+}
 /* table */
 
 .tableBox{
@@ -312,10 +418,10 @@ input[type=checkbox]:checked + label:before {
 
 }
 .col1{
-	width:230px;
+	width:270px;
 }
 .col2{
-	width:280px;
+	width:270px;
 }
 .col3{
 	width:25px;
@@ -325,6 +431,7 @@ input[type=checkbox]:checked + label:before {
 }
 .col5{
 	width:130px;
+	
 }
 .col6{
 	width:170px;

@@ -5,7 +5,6 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
@@ -15,40 +14,36 @@
     <!-- google font -->
     <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
 
+    <!-- angucomplete-->
+    <link href="../css/angucomplete.css" rel="stylesheet" type="text/css">
+
     <!-- Bootstrap core CSS -->
-    <!-- based on : http://getbootstrap.com/examples/jumbotron-narrow/ -->
-    <!--<link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">-->
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap.3.1.1.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="../css/jumbotron-narrow.css" rel="stylesheet" type="text/css">
 
-    
-    <!-- data tables http://datatables.net/examples/ajax/objects.html -->
-    <!--<link href="../css/datatables.min.css" rel="stylesheet" type="text/css">-->
-
     <!-- local styles -->
     <link href="../css/local.css" rel="stylesheet">
-    <!-- JS -->
-    <!--
-    <script src="../js/jquery.js" type="text/javascript" ></script>
-    <script src="../js/bootstrap.min.js" type="text/javascript" ></script>
-    <script src="../js/datatables/datatables.min.js" type="text/javascript" ></script>
-    -->
-    <!-- angluar -->
     
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-sanitize.js"></script>
+    <!-- JS -->
+    <!-- angluar -->
+    <script src="../js/angular.1.4.5.js" type="text/javascript"></script>
+    <script src="../js/angular-animate.1.4.5.js" type="text/javascript"></script>
+    <script src="../js/angular-sanitize.1.4.5.js" type="text/javascript"></script>
+    <script src="../js/angular-spinner.js" type="text/javascript"></script>
     
    
+    <!-- BOOTSTRAP -->
+    <script src="../js/ui-bootstrap-tpls-0.13.4.js"></script>
 
-    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
-    <!--<script src="../js/ui-bootstrap-0.1.0.js"></script>--.
-    <!-- <script src="example.js"></script>-->
-    <!-- local -->
+    <!-- SPIN -->
+    <script src="../js/spin.js" type="text/javascript"></script>
+
+    <!-- APP -->
     <script src="../js/control.js" type="text/javascript"></script>
     <script src="../js/directives.js" type="text/javascript"></script>
+    <script src="../js/angucomplete.js" type="text/javascript"></script>
     <script src="../js/filters.js" type="text/javascript"></script>
    
     
@@ -65,113 +60,113 @@
   <body>
 
     <div class="container" ng-controller="appCtrl">
-      <div class="clearfix clearNoborder ">
+      
+      <div class="clearfix btmBorder ">
         <div class="col-lg-6 logo_TopLeft">
+        <span class="reLogo">R</span>Economy Project : <span class="reTxt">Fund Database</span>
         </div>
         <div class="col-lg-6 logo_TopRight">
         </div>
         
       </div>
+      
       <!-- -->
       <div class="row ">
       		<div class="headerTXT_LH">
+          <!--
       			<h4>Current Selected Fund:</h4>
-      			<h3>{{dataSet[0][0].value}}</h3>
-      			<h5 class="titleShift">Filters:</h5>
+      			<h3 ng-bind-html = "empList[0].name | titleFormat"></h3>
+      			
+            -->
+            <h5 class="titleShift">Filters:</h5>
       		</div>
       		<div class="headerTXT_RH">
-      			<div class="oppNum">
-                {{dataLength}}
+      			<!--
+            <div class="oppNum">
+                {{screenNum}}
             </div>
       			<div class="oppTxt">Opportunities found:</div>
+            -->
       		</div>
 
       </div>
 
-      <div class="jumbotron row marketing">
+      <div class="jumbotron row marketing tableBox">
       	<!-- -->
       <div class="col-lg-6 box-inner-txt">
+        <div class="txtBoxWrap">
+              <div class="txtBoxLabel topTxt">
+                <span class='txtH1'>Fund: </span>
+              </div>
+              <!-- -->
+              <div class="inputWrap1">
+                <input type="search" 
+                   ng-model="selector.name" 
+                   placeholder="Search free text"
+                   class="form-control text-box">
+              </div>
+              
+              
+          </div>
       	<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			<span class='txtH1'>Provider:</span>
-      		</div>
-      		<div class="input-group input-group-lg txtBoxBox">
-			  <input type="text" class="form-control text-box" placeholder="Big Lottery" aria-describedby="sizing-addon1">
-			</div>
-		</div>
+          		<div class="txtBoxLabel topTxt">
+          			<span class='txtH1'>Provider:</span>
+          		</div>
+              <!-- -->
+              <div class="inputWrap1">
+                <input type="search" 
+                   ng-model="selector.provider" 
+                   placeholder="Search free text"
+                   class="form-control text-box">
+              </div>
+                
+          </div>
+          <!-- -->
+          
 		<!-- -->
 		<div class="txtBoxWrap">
       		<div class="txtBoxLabel">
       			Country:
       		</div>
+          <!-- -->
+          <div class="btn-group txtBoxBox" 
+                dropdown is-open="status.country.isopen">
+            <button id="single-button-country" 
+                    type="button" 
+                    class="btn btn-primary text-box" 
+                    dropdown-toggle 
+                    ng-disabled="disabled">
+                {{selector.countries}} <span class="caret"></span>
+            </button>
+              <ul class="dropdown-menu" aria-labelledby="s01">
+                <li ng-repeat="place in countryList ">
+                  <a href ng-click="updateIt2('countries',place.name)">{{place.name}}</a>
+                </li>
+              </ul>
+             
+          </div>
+          
+          <!-- -->
+		</div>
+		<!-- -->
+    
+		<!-- -->
+		<div class="txtBoxWrap btmBox">
+      		<div class="txtBoxLabel">
+      			Word Search:
+      		</div>
       		<div class="input-group input-group-lg txtBoxBox">
-			  <button type="button" class="btn btn-default dropdown-toggle text-box" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    England, Scotland .. <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
-				  </ul>
+          
+          <input type="search" 
+                 ng-model="selector.description" 
+                 placeholder="Search free text"
+                 class="form-control text-box">
+			  <!--<input type="text" class="form-control text-box" placeholder="Other words.." aria-describedby="sizing-addon1">-->
 			</div>
 		</div>
 		<!-- -->
-		<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			Region:
-      		</div>
-      		<div class="input-group input-group-lg txtBoxBox">
-			  <button type="button" class="btn btn-default dropdown-toggle text-box" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    United Kingdom <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
-				  </ul>
-			</div>
-		</div>
-		<!-- -->
-		<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			Location:
-      		</div>
-      		<div class="input-group input-group-lg txtBoxBox">
-			  <button type="button" class="btn btn-default dropdown-toggle text-box" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				    Okehampton <span class="caret"></span>
-				  </button>
-				  <ul class="dropdown-menu">
-				    <li><a href="#">Action</a></li>
-				    <li><a href="#">Another action</a></li>
-				    <li><a href="#">Something else here</a></li>
-				    <li role="separator" class="divider"></li>
-				    <li><a href="#">Separated link</a></li>
-				  </ul>
-			</div>
-		</div>
-		<!-- -->
-		<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			<span class='txtH1'>Search:</span>
-      		</div>
-      		<div class="input-group input-group-lg txtBoxBox">
-			  <input type="text" class="form-control text-box" placeholder="Other words.." aria-describedby="sizing-addon1">
-			</div>
-		</div>
-		<!-- -->
-		
-      	<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			Max Size:
-      		</div>
-      		<div class="input-group input-group-lg txtBoxNum">
-			  <input type="text" class="form-control text-box-num" placeholder="200" aria-describedby="sizing-addon1">
-			</div>
-		</div>
+		    
+
 
       </div> <!-- /col-lg-6 box-inner-txt -->
       <div class="col-lg-6 box-inner-txt">
@@ -179,52 +174,110 @@
       			<span class="txtH2" >Org. Type</span>
       			 <ul class="radioList">
       			 	<li>
-					    <input id="male" type="radio" name="gender" value="male">
-					    <label for="male">Profit</label>
+					    <input id="profit" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.profit"
+                     name="profit" 
+                     >
+					    <label for="profit">Profit</label>
+              
 				    </li>
 				    <li>
-					    <input id="female" type="radio" name="gender" value="female" checked="true">
-					    <label for="female">Non-profit</label>
+					    <input id="nonprofit" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.nonprofit"
+                     name="nonprofit" 
+                     >
+					    <label for="nonprofit">Non-profit</label>
+             
 				    </li>
 				</ul>
+        <div class="txtBoxNumWrap" >
+              <div class="txtBoxLabel">
+                Max Fund Size:
+                </div>
+                <div class="input-group input-group-lg txtBoxNum">
+                    <input type="search" 
+                             ng-model="selector.max" 
+                             placeholder=" "
+                             class="form-control text-box-num">
+                 </div>
+              </div>
+              
       		</div>
       		<div class="txtRH_2">
       			<span class="txtH2">Fund Type</span>
       			<ul class="radioList">
       			 	<li>
-					    <input id="grant" type="checkbox" name="grant" value="check-1" checked="true">
+					    <input id="grant" 
+                     type="checkbox"
+                     ng-model="checkboxModel.grant"
+                     name="grant"  
+                     >
 					    <label for="grant">Grant</label>
+              
 				    </li>
 				    <li>
-					    <input id="debt" type="checkbox" name="debt" value="check-2">
+					    <input id="debt"
+                     type="checkbox" 
+                     ng-model="checkboxModel.debt"
+                     name="debt"
+                     >
 					    <label for="debt">Debt</label>
+              
 				    </li>
 				    <li>
-					    <input id="enquiry" type="checkbox" name="enquiry" value="check-3">
-					    <label for="enquiry">Enquiry</label>
+					    <input id="equity" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.equity"
+                     name="equity" 
+                     >
+					    <label for="equity">Equity</label>
+             
 				    </li>
 				    <li>
-					    <input id="support" type="checkbox" name="enquiry" value="check-4" checked="true">
+					    <input id="support" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.support"
+                     name="support" 
+                     >
 					    <label for="support">Support</label>
+              
 				    </li>
 				    <li>
-					    <input id="platform" type="checkbox" name="enquiry" value="check-5" checked="true">
+					    <input id="platform" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.platform"
+                     name="platform" 
+                     >
 					    <label for="platform">Platform</label>
+              
 				    </li>
 				    <li>
-					    <input id="legislation" type="checkbox" name="enquiry" value="check-6">
+					    <input id="legislation" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.legislation"
+                     name="legislation" 
+                     >
 					    <label for="legislation">Legislation</label>
+              
 				    </li>
 				</ul>
+        
       		</div>
       		<div class="txtRH_3">
       		
       		</div>
       </div>
 		</div><!-- /jumbotron -->
-    <!-- -->
+   
       <div class="row ">
-          <h5 class="titleShiftNoBox">Fund List:</h5>
+          <h5 class="titleShiftNoBox">Fund List: <span class="reLogo2">( {{sreenResNum}}  of {{dataLength}} )</span> </h5>
+                <!--
+                <div class="oppFound">
+                    Opportunities: <span class="reLogo">{{screenNum}}
+                </div>
+                -->
       </div>
       <!-- -->
       <div class="jumbotron row marketing tableBox">
@@ -232,6 +285,13 @@
               
               <!-- angular -->
               <!-- data-load-->
+              <div class="spinnerWrap">
+              <div us-spinner 
+                    spinner-key="spinner-1" 
+                    spinner-start-active="true" >
+                    <!--{{dMatrix.APIbtn}}-->
+                </div>
+              </div>
               <div >
                 <div class="tableList">
                     <div class="tRowHead" >
@@ -243,194 +303,183 @@
 
                         <div class="col col1">
                           <div class="tHead" >
-                            {{dataSet[0][0].name | capitalOne}}
+                            Fund
                           </div>
                         </div>
                         <div class="col col2">
                           <div class="tHead" >
-                          {{dataSet[0][1].name | capitalOne}}
+                            Provider
                           </div>
                         </div>
                         <div class="col col3">
                           <div class="tHead">
-                            {{dataSet[0][2].name | capitalOne}}
+                            <!--Country-->
                           </div>
                         </div>
                         <div class="col col4" >
                           <div class="tHead">
-                            {{dataSet[0][3].name | capitalOne}}
+                            Date
                           </div>
                         </div>
                         <div class="col col5">
                           <div class="tHead">
-                            {{dataSet[0][4].name | capitalOne}}
+                            Country
                           </div>
                         </div>
                         <div class="col col6 ">
                           <div class="tHead cluster">
-                            {{dataSet[0][5].name | capitalOne}}
+                            Grant
                           </div>
                           <div class="tHead cluster">
-                            {{dataSet[0][6].name | capitalOne}}
+                            Debt
                           </div>
                           <div class="tHead cluster">
-                            {{dataSet[0][7].name | capitalOne}}
+                            Equity
                           </div>
                           <div class="tHead cluster">
-                            {{dataSet[0][8].name | capitalOne}}
+                            Support
                           </div>
                           <div class="tHead cluster">
-                            {{dataSet[0][9].name | capitalOne}}
+                            Platform
                           </div>
                           <div class="tHead cluster">
-                            {{dataSet[0][10].name | capitalOne}}
+                            Legislation
+                          </div>
+                          <div class="tHead cluster">
+                            Profit
+                          </div>
+                          <div class="tHead cluster">
+                            No<span style="opacity:0">n</span>Profit
                           </div>
                         </div>
-                        <div class="col col7 ">
-                          <div class="tHead cluster">
-                            {{dataSet[0][11].name | capitalOne}}
-                          </div>
-                          <div class="tHead cluster">
-                            {{dataSet[0][12].name | capitalOne}}
-                          </div>
-                        </div>
-                        <!--
-                        <th ><div class="tHead" >Provider</div></th>
-                        <th ><div class="tHead" >Fund</div></th>
-                        <th ><div class="tHead">Region</div></th>
-                        <th ><div class="tHead">Date</div></th>
-                        <th ><div class="tHead">State</div></th>
-                        <th ><div class="tHead">Grant</div></th>
-                        <th ><div class="tHead">Debt</div></th>
-                        <th ><div class="tHead">Equity</div></th>
-                        <th ><div class="tHead">Support</div></th>
-                        <th ><div class="tHead">Platform</div></th>
-                        <th ><div class="tHead">Legislation</div></th>
-                        <th ><div class="tHead">Weblink</div></th>
-                        <th ><div class="tHead">Edit</div></th>
-                        -->
+                        
+                       
                     </div>
                     <!-- -->
                     <div class="tRow tLine">
                       <!--spacer-->
                     </div>
+                    <!-- -->
                     <accordion
-                        close-others='true'
+                        close-others="true"
                         class="tRowBody" 
-                        ng-repeat="dName in dataSet track by $index "
+                        ng-model="screenNum2"
+                        ng-repeat="emp in empList  | toArray:false | filter:{name:selector.name,
+                                                                            provider:selector.provider,
+                                                                            countries:selector.countries,
+                                                                            description:selector.description,
+                                                                            max:selector.max,
+                                                                            }
+                                                                    | filterCheckBox:checkboxModel
+                                                                            as results"
+                                                                    >
                         
-                        >
-                        <!--<accordion close-others="oneAtATime">
-                          <accordion-group heading="Dynamic Body Content" is-open="true">
-                            <p>The body of the accordion group grows to fit the contents</p>
-                          </accordion-group>
-                        </accordion>
-                        -->
-                        <accordion-group  
-                          
-                          
-                          >
+                        <!-- -->
+                        
+                        <accordion-group 
+                         >
+
                           <accordion-heading>
                           
-                            <div class="col col1 cellCol" >
-                              {{dName[0].value}}
+                            <div class="col col1 cellCol" 
+                                 ng-bind-html = "emp.name | isDef"
+                              >
                             </div>
-                            <div class="col col2 cellCol">
-                              {{dName[1].value}}
+                            <div class="col col2 cellCol"
+                                 ng-bind-html = "emp.provider | isDef"
+                            >
+                             
                             </div>
                             <div class="col col3 cellCol">
+                              <!--
                               <div class="icons "
-                                     name="uk" 
-                                     data='{{dName[2].value}}'
+                                     name="{{emp.countries}}" 
+                                     data=null
                                      link-graphic
-                                > 
+                                >
                                 </div>
+                                -->
                               
                             </div>
-                            <div class="col col4 cellCol">
-                              {{dName[3].value}}
+                            <div class="col col4 cellCol"
+                                 ng-bind-html = "emp.date | isDef"
+                                 >
                             </div>
                             <div class="col col5 cellCol">
-                              {{dName[4].value}}
+                                <div class="iconWrap"
+                                     name="{{emp.countries}}" 
+                                     data=null
+                                     link-graphic
+                                >
+                                </div>
+                             
                             </div>
                             
                             <div class="col col6 ">  
                                 <div class="checkTable cluster">
                                   <div class="">
-                                     <input name="{{dName[5].value}}" type="checkbox"  checkbox-group/>
-                                     <label for="{{dName[5].value}}"></label>
+                                     <input name="{{emp.grant}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.grant}}"></label>
                                    </div>
                                 </div>
                                 <div class="checkTable cluster">
                                     <div class="">
-                                       <input name="{{dName[6].value}}" type="checkbox"  checkbox-group/>
-                                       <label for="{{dName[6].value}}"></label>
+                                       <input name="{{emp.debt}}" type="checkbox"  checkbox-group/>
+                                       <label for="{{emp.debt}}"></label>
                                     </div>
                                 </div>
                                 <div class="checkTable cluster">
                                     <div class="">
-                                       <input name="{{dName[7].value}}" type="checkbox"  checkbox-group/>
-                                       <label for="{{dName[7].value}}"></label>
+                                       <input name="{{emp.equity}}" type="checkbox"  checkbox-group/>
+                                       <label for="{{emp.equity}}"></label>
                                     </div>
                                 </div>
                                 <div class="checkTable cluster">
                                   <div class="">
-                                     <input name="{{dName[8].value}}" type="checkbox"  checkbox-group/>
-                                     <label for="{{dName[8].value}}"></label>
+                                     <input name="{{emp.support}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.support}}"></label>
                                   </div>
                                 </div>
                                 <div class="checkTable cluster">
                                    <div class="">
-                                     <input name="{{dName[9].value}}" type="checkbox"  checkbox-group/>
-                                     <label for="{{dName[9].value}}"></label>
+                                     <input name="{{emp.platform}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.platform}}"></label>
                                    </div>
                                 </div>
                                 <div class="checkTable cluster">
                                   <div class="">
-                                     <input name="{{dName[10].value}}" type="checkbox"  checkbox-group/>
-                                     <label for="{{dName[10].value}}"></label>
+                                     <input name="{{emp.legislation}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.legislation}}"></label>
+                                  </div> 
+                                </div>
+                                <div class="checkTable cluster">
+                                  <div class="">
+                                     <input name="{{emp.profit}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.profit}}"></label>
+                                  </div> 
+                                </div>
+                                <div class="checkTable cluster">
+                                  <div class="">
+                                     <input name="{{emp.non_profit}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.non_profit}}"></label>
                                   </div> 
                                 </div>
                             </div>
                             
-                            
-                            <div class="col col7 cellCol">
-                              <div class="norm">
-                                <div class="icons "
-                                     name="w" 
-                                     data='{{dName[11].value}}'
-                                     link-graphic
-                                > 
-                                </div>
-                                     
-                              </div>
-                              <div class="norm">
-                                <div class="icons "
-                                     name="ed"
-                                     data='{{dName[12].value}}' 
-                                     link-graphic
-                                > 
-                                </div>
-
-                              </div>
-                            </div>
-                            
-                            
-                        
-                        
+                           
                         </accordion-heading>
                         <div class="accInner">
                           <div class="accInnerL">
-                            <span class="accHeader">Fund Name : </span> {{dName[1].value}}<br/>
-                            <span class="accHeader">Fund Provider : </span> {{dName[0].value}}<br/>
-                            <span class="accHeader">Region : </span> {{dName[2].value}}<br/>
-                            <span class="accHeader">County : </span> {{dName[4].value}}<br/>
-                            <span class="accHeader">Description : </span> <br/><div class="descTxt">{{dName[13].value}}</div><br/>
+                            <span class="accHeader">Fund Name : </span> {{emp.name}}<br/>
+                            <span class="accHeader">Fund Provider : </span> {{emp.provider}}<br/>
+                            <span class="accHeader">Region : </span> {{emp.state}}<br/>
+                            <span class="accHeader">Country : </span> {{emp.country}}<br/>
+                            <span class="accHeader">Description : </span> <br/><div class="descTxt">{{emp.description}}</div><br/>
                           </div>
                           <div class="accInnerR">
-                            <span class="accHeader">Web Site : </span> {{dName[11].value}}<br/>
-                            <span class="accHeader">Supports : </span> n/a<br/>
-                            <span class="accHeader">Specific Locations : </span><br/><div class="descTxt">{{dName[4].value}}</div><br/>
+                            <span class="accHeader">Web Site : </span> <a target="_blank" href="{{emp.website}}">{{emp.website}}</a><br/>
+                            <span class="accHeader">Supports : </span>{{emp.support}}<br/>
+                            <span class="accHeader">Specific Locations : </span><br/><div class="descTxt">{{emp.locations}}</div><br/>
                             <span class="accHeader">Quick View : </span><br/>
                               <div class="miniTable">
                                   <div class="miniRow">
@@ -451,7 +500,7 @@
                                         </div>
                                   </div>
 
-                                  <div class="miniRow" ng-repeat="ddName in dName[14].data ">
+                                  <div class="miniRow" ng-repeat="ddName in emp.quickview ">
                                        
                                        
                                         <div class="miniCol ">
@@ -482,62 +531,6 @@
                     </div>
                 </div>
 
-              <!-- accordion -->
-<!--
-              <div ng-controller="AccordionDemoCtrl">
-                  <script type="text/ng-template" id="group-template.html">
-                    <div class="panel {{panelClass || 'panel-default'}}">
-                      <div class="panel-heading">
-                        <h4 class="panel-title" style="color:#fa39c3">
-                          <a href tabindex="0" class="accordion-toggle" ng-click="toggleOpen()" accordion-transclude="heading"><span
-                            ng-class="{'text-muted': isDisabled}">{{heading}}</span></a>
-                        </h4>
-                      </div>
-                      <div class="panel-collapse collapse" collapse="!isOpen">
-                        <div class="panel-body" style="text-align: right" ng-transclude></div>
-                      </div>
-                    </div>
-                  </script>
-
-                  <p>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="status.open = !status.open">Toggle last panel</button>
-                    <button type="button" class="btn btn-default btn-sm" ng-click="status.isFirstDisabled = ! status.isFirstDisabled">Enable / Disable first panel</button>
-                  </p>
-
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox" ng-model="oneAtATime">
-                      Open only one at a time
-                    </label>
-                  </div>
-                  <accordion close-others="oneAtATime">
-                    <accordion-group heading="Static Header, initially expanded" is-open="status.isFirstOpen" is-disabled="status.isFirstDisabled">
-                      This content is straight in the template.
-                    </accordion-group>
-                    <accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                      {{group.content}}
-                    </accordion-group>
-                    <accordion-group heading="Dynamic Body Content">
-                      <p>The body of the accordion group grows to fit the contents</p>
-                      <button type="button" class="btn btn-default btn-sm" ng-click="addItem()">Add Item</button>
-                      <div ng-repeat="item in items">{{item}}</div>
-                    </accordion-group>
-                    <accordion-group heading="Custom template" template-url="group-template.html">
-                      Hello
-                    </accordion-group>
-                    <accordion-group heading="Delete account" panel-class="panel-danger">
-                      <p>Please, to delete your account, click the button below</p>
-                      <button class="btn btn-danger">Delete</button>
-                    </accordion-group>
-                    <accordion-group is-open="status.open">
-                      <accordion-heading>
-                        I can have markup, too! <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}"></i>
-                      </accordion-heading>
-                      This is just some content to illustrate fancy headings.
-                    </accordion-group>
-                  </accordion>
-                </div>
--->
               <!-- -->
         </div>
     <!-- -->
