@@ -441,7 +441,7 @@ input[type=checkbox]:checked + label:before {
 	/*background:#fff;*/
 }
 .col6 .cluster,.col7 .cluster{
-	width:20px;
+	width:20px;/*20*/
 	display:block;
 	float:left;
 
