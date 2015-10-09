@@ -515,6 +515,7 @@ accordion-heading{
 	border: 1px solid #ccc;
 	padding:10px;
 	font-size:17px;
+	overflow:auto;
 }
 .accInnerL{
 	width:485px;

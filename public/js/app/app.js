@@ -1,5 +1,5 @@
 //angular
-var app = angular.module('myApp', 
+var app = angular.module('reApp', 
             ['ngAnimate', 
             'ui.bootstrap',
             'ngSanitize',
