@@ -9,7 +9,7 @@ app.filter('capitalOne', function() {
 });
 
 //Checkbox
-app.filter('filterCheckBox',function($filter){
+app.filter('filterType',function($filter){
 	 return function (_obj,_checkBoxModel){
 		
         var newArr = [];
@@ -21,8 +21,7 @@ app.filter('filterCheckBox',function($filter){
 				|| _checkBoxModel.support == true && d.support == true
 				|| _checkBoxModel.platform == true && d.platform== true
 				|| _checkBoxModel.legislation == true && d.legislation== true
-				|| _checkBoxModel.profit == true && d.profit== true
-				|| _checkBoxModel.nonprofit == true && d.non_profit== true
+
 				){
 				
 				newArr.push(d);
@@ -35,6 +34,30 @@ app.filter('filterCheckBox',function($filter){
 	}
 	
 })
+
+app.filter('filterProfit',function($filter){
+	 return function (_obj,_checkBoxModel){
+	 	var newArr = [];
+		angular.forEach(_obj,function(d,i){//add to array / remove from array??
+
+			if( (_checkBoxModel.profit == true && d.profit== true) 
+					|| (_checkBoxModel.nonprofit == true && d.non_profit== true) 
+				|| ( (_checkBoxModel.profit == false && d.profit== false) 
+					&& (_checkBoxModel.nonprofit == false && d.non_profit== false) )
+				)
+			{
+				
+				newArr.push(d);
+			}
+
+			});
+		return newArr;
+
+	 }
+})
+
+			//	&& (_checkBoxModel.profit == true && d.profit== true) || (_checkBoxModel.nonprofit == true && d.non_profit== true)
+
 
 //string max size
 app.filter('isDef',function(){

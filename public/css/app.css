@@ -41,12 +41,18 @@ body{
 .container .jumbotron{
 	border-radius:8px;
 	padding:0px;
+	margin-bottom:10px;
 	/*opacity:0.6;*/
 }
 
 .marketing{
 	margin-top:0px;
 
+}
+
+.form-control{
+	border-radius: 8px;
+	margin-bottom:0px;
 }
 
 .input-group .form-control:last-child{
@@ -60,7 +66,7 @@ body{
 	padding-right:10px;
 	border-radius:8px;
 	height:33px;
-	width:222px;
+	width:160px;
 	text-align:left;
 	color:#131e29;
 
@@ -75,6 +81,9 @@ body{
 	border-color:#ccc;
 }
 
+ul, ol{
+	margin-bottom: 0px
+}
 
 /*local  css */
 .titleShift{
@@ -110,6 +119,11 @@ body{
 	color:#000;
 	font-weight: 700;
 }
+.reLogo3{
+	color:#007681;
+	font-weight: 700;
+	font-size:36px;
+}
 .logo_TopRight{
 	background:url(../../img/logo_RH_01.jpg) 0px 5px no-repeat;
 	width:102px;
@@ -120,7 +134,7 @@ body{
 	border:none;
 }
 .btmBorder{
-	border-bottom:1px solid #dedfdf ;
+	
 	padding-left:0px;
 }
 .headerTXT_LH{
@@ -154,19 +168,19 @@ body{
 
 /* form */
 .btmBox{
-	margin-bottom:20px;
+	margin-bottom:5px;
 }
 
 .txtBoxWrap{
-	width:100%;
+	width:300px;
 	height:auto;
 	display:block;
 	float:left;
-	padding-top:10px;
+	padding-top:5px;
 }
 .txtBoxLabel{
 	color:#007681;
-	font-size:22px;
+	font-size:16px;
 	display:block;
 	float:left;
 	padding-left:5px;
@@ -176,10 +190,10 @@ body{
 	/*font-size:22px;*/
 	display:block;
 	float:right;
-	width:222px;
+	width:160px;
 }
 .txtBoxNumWrap{
-	padding-top:15px;
+	padding-top:19px;
 }
 .txtBoxNum{
 	color:#131e29;
@@ -199,12 +213,24 @@ body{
 	padding-top:20px;
 }
 .inputWrap1{
-	width:220px;
+	width:160px;
+	display:block;
+	float:right;
+}
+.topTxt{
+	width:110px;
+}
+.LH-LH{
+	width:160px;
+	height:150px;
 	display:block;
 	float:left;
 }
-.topTxt{
-	width:245px;
+
+.LH-RH{
+	width:240px;
+	display:block;
+	float:left;
 }
 
 .txtH1{
@@ -212,19 +238,19 @@ body{
 }
 .txtH2{
 	font-weight:700;
-	font-size:22px;
+	font-size:18px;
 	padding-left:8px;
 }
 
 .txtRH_1{
-	padding-top:10px;
+	padding-top:2px;
 	width:230px;
 	float:left;
 
 }
 .txtRH_2{
 	/*background:#c3d5d6;*/
-	padding-top:10px;
+	padding-top:2px;
 	width:165px;
 	height:100%;
 	float:left;
@@ -251,6 +277,10 @@ label {
     padding-left: 25px;
     margin-right: 15px;
     font-size: 16px;
+}
+.check {
+    
+    margin-bottom:4px;
 }
 
 input[type=radio],input[type=checkbox] {
@@ -376,8 +406,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .tRowHead {
-	height:70px;
-	padding-top:40px;
+	height:55px;
+	padding-top:30px;
 	padding-left:10px;
 }
 .tRow{
@@ -434,7 +464,7 @@ input[type=checkbox]:checked + label:before {
 	
 }
 .col6{
-	width:170px;
+	width:200px;/*170*/
 	padding-top:5px;
 }
 .cellCol{
@@ -447,7 +477,8 @@ input[type=checkbox]:checked + label:before {
 
 }
 .col7{
-	width:40px;
+	width:25px;
+	display:block;
 }
 .col7 .norm{
 	width:16px;
@@ -507,6 +538,14 @@ accordion-heading{
 }
 
 /* inner panel */
+
+.accSpacer{
+	width:958px;
+	height:10px;
+	display:block;
+	float:left;
+}
+
 .accInner{
 	width:958px;
 	min-height:250px;/*300*/
@@ -516,6 +555,8 @@ accordion-heading{
 	padding:10px;
 	font-size:17px;
 	overflow:auto;
+	left:0px;
+	float:left;
 }
 .accInnerL{
 	width:485px;

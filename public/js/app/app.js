@@ -51,6 +51,7 @@ app.controller('appCtrl',function($scope,
     $scope.checkboxModel.legislation = true;
     $scope.checkboxModel.profit = true;
     $scope.checkboxModel.nonprofit = true;
+    $scope.checkboxModel.other = true;
     
     //MAIN SCREEN LISTS
     $scope.empList = {};
@@ -101,6 +102,16 @@ app.controller('appCtrl',function($scope,
                 switch(_name){
                   case "main":
                       $scope.empList = data;
+                      angular.forEach($scope.empList,function(d,i){
+                        //test..
+                        if(i < 3){
+                          console.log("JSON: " + JSON.stringify(d) );
+                        }
+                        //
+                        console.log(":: profit: " + d.profit + " :non-profit: " + d.non_profit);
+                      });
+                      
+
 
                       $scope.dataLength = $scope.empList.length;
                       

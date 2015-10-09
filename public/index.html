@@ -71,81 +71,85 @@
       </div>
       
       <!-- -->
+      <!--
       <div class="row ">
       		<div class="headerTXT_LH">
-          <!--
-      			<h4>Current Selected Fund:</h4>
-      			<h3 ng-bind-html = "empList[0].name | titleFormat"></h3>
-      			
-            -->
+          
             <h5 class="titleShift">Filters:</h5>
       		</div>
       		<div class="headerTXT_RH">
-      			<!--
-            <div class="oppNum">
-                {{screenNum}}
-            </div>
-      			<div class="oppTxt">Opportunities found:</div>
-            -->
+      			
       		</div>
 
       </div>
+      -->
 
       <div class="jumbotron row marketing tableBox">
       	<!-- -->
+      
       <div class="col-lg-6 box-inner-txt">
-        <div class="txtBoxWrap">
-              <div class="txtBoxLabel topTxt">
-                <span class='txtH1'>Fund: </span>
+        <div class="LH-LH">
+        <span class="txtH2">Filters:</span>
+        <br/>
+        <br/>
+          <span class="txtH2">Funds Found:</span>
+          <br/>
+          <span class="txtH2 reLogo2">{{sreenResNum}} </span>of<span class="txtH2 reLogo3">{{dataLength}} </span>
+      
+        </div>
+        <div class="LH-RH">
+            <div class="txtBoxWrap">
+                  <div class="txtBoxLabel topTxt">
+                    <span class='txtH1'>Fund: </span>
+                  </div>
+                  <!-- -->
+                  <div class="inputWrap1">
+                    <input type="search" 
+                       ng-model="selector.name" 
+                       placeholder="Search free text"
+                       class="form-control text-box">
+                  </div>
+                  
+                  
+              </div>
+          	<div class="txtBoxWrap">
+              		<div class="txtBoxLabel topTxt">
+              			<span class='txtH1'>Provider:</span>
+              		</div>
+                  <!-- -->
+                  <div class="inputWrap1">
+                    <input type="search" 
+                       ng-model="selector.provider" 
+                       placeholder="Search free text"
+                       class="form-control text-box">
+                  </div>
+                    
               </div>
               <!-- -->
-              <div class="inputWrap1">
-                <input type="search" 
-                   ng-model="selector.name" 
-                   placeholder="Search free text"
-                   class="form-control text-box">
-              </div>
               
-              
-          </div>
-      	<div class="txtBoxWrap">
-          		<div class="txtBoxLabel topTxt">
-          			<span class='txtH1'>Provider:</span>
+    		<!-- -->
+    		<div class="txtBoxWrap">
+          		<div class="txtBoxLabel">
+          			Country:
           		</div>
               <!-- -->
-              <div class="inputWrap1">
-                <input type="search" 
-                   ng-model="selector.provider" 
-                   placeholder="Search free text"
-                   class="form-control text-box">
+              <div class="btn-group txtBoxBox" 
+                    dropdown is-open="status.country.isopen">
+                <button id="single-button-country" 
+                        type="button" 
+                        class="btn btn-primary text-box" 
+                        dropdown-toggle 
+                        ng-disabled="disabled">
+                    {{selector.countries}} <span class="caret"></span>
+                </button>
+                  <ul class="dropdown-menu" aria-labelledby="s01">
+                    <li ng-repeat="place in countryList ">
+                      <a href ng-click="updateIt2('countries',place.name)">{{place.name}}</a>
+                    </li>
+                  </ul>
+                 
               </div>
-                
           </div>
-          <!-- -->
-          
-		<!-- -->
-		<div class="txtBoxWrap">
-      		<div class="txtBoxLabel">
-      			Country:
-      		</div>
-          <!-- -->
-          <div class="btn-group txtBoxBox" 
-                dropdown is-open="status.country.isopen">
-            <button id="single-button-country" 
-                    type="button" 
-                    class="btn btn-primary text-box" 
-                    dropdown-toggle 
-                    ng-disabled="disabled">
-                {{selector.countries}} <span class="caret"></span>
-            </button>
-              <ul class="dropdown-menu" aria-labelledby="s01">
-                <li ng-repeat="place in countryList ">
-                  <a href ng-click="updateIt2('countries',place.name)">{{place.name}}</a>
-                </li>
-              </ul>
-             
-          </div>
-          
           <!-- -->
 		</div>
 		<!-- -->
@@ -171,7 +175,7 @@
       </div> <!-- /col-lg-6 box-inner-txt -->
       <div class="col-lg-6 box-inner-txt">
       		<div class="txtRH_1">
-      			<span class="txtH2" >Org. Type</span>
+      			<!--<span class="txtH2" >Org. Type</span>-->
       			 <ul class="radioList">
       			 	<li>
 					    <input id="profit" 
@@ -179,7 +183,7 @@
                      ng-model="checkboxModel.profit"
                      name="profit" 
                      >
-					    <label for="profit">Profit</label>
+					    <label class="check" for="profit">Profit</label>
               
 				    </li>
 				    <li>
@@ -188,9 +192,18 @@
                      ng-model="checkboxModel.nonprofit"
                      name="nonprofit" 
                      >
-					    <label for="nonprofit">Non-profit</label>
+					    <label class="check" for="nonprofit">Non-profit</label>
              
 				    </li>
+            <li>
+              <input id="other" 
+                     type="checkbox" 
+                     ng-model="checkboxModel.other"
+                     name="other" 
+                     >
+              <label class="check" for="other">Other</label>
+             
+            </li>
 				</ul>
         <div class="txtBoxNumWrap" >
               <div class="txtBoxLabel">
@@ -206,7 +219,7 @@
               
       		</div>
       		<div class="txtRH_2">
-      			<span class="txtH2">Fund Type</span>
+      			<!--<span class="txtH2">Fund Type</span>-->
       			<ul class="radioList">
       			 	<li>
 					    <input id="grant" 
@@ -214,7 +227,7 @@
                      ng-model="checkboxModel.grant"
                      name="grant"  
                      >
-					    <label for="grant">Grant</label>
+					    <label class="check" for="grant">Grant</label>
               
 				    </li>
 				    <li>
@@ -223,7 +236,7 @@
                      ng-model="checkboxModel.debt"
                      name="debt"
                      >
-					    <label for="debt">Debt</label>
+					    <label class="check" for="debt">Debt</label>
               
 				    </li>
 				    <li>
@@ -232,7 +245,7 @@
                      ng-model="checkboxModel.equity"
                      name="equity" 
                      >
-					    <label for="equity">Equity</label>
+					    <label class="check" for="equity">Equity</label>
              
 				    </li>
 				    <li>
@@ -241,7 +254,7 @@
                      ng-model="checkboxModel.support"
                      name="support" 
                      >
-					    <label for="support">Support</label>
+					    <label class="check" for="support">Support</label>
               
 				    </li>
 				    <li>
@@ -250,7 +263,7 @@
                      ng-model="checkboxModel.platform"
                      name="platform" 
                      >
-					    <label for="platform">Platform</label>
+					    <label class="check" for="platform">Platform</label>
               
 				    </li>
 				    <li>
@@ -259,7 +272,7 @@
                      ng-model="checkboxModel.legislation"
                      name="legislation" 
                      >
-					    <label for="legislation">Legislation</label>
+					    <label class="check" for="legislation">Legislation</label>
               
 				    </li>
 				</ul>
@@ -271,14 +284,7 @@
       </div>
 		</div><!-- /jumbotron -->
    
-      <div class="row ">
-          <h5 class="titleShiftNoBox">Fund List: <span class="reLogo2">( {{sreenResNum}}  of {{dataLength}} )</span> </h5>
-                <!--
-                <div class="oppFound">
-                    Opportunities: <span class="reLogo">{{screenNum}}
-                </div>
-                -->
-      </div>
+      
       <!-- -->
       <div class="jumbotron row marketing tableBox">
               <div class="col-lg-12 box-inner-txt">
@@ -345,7 +351,11 @@
                           <div class="tHead cluster">
                             Non&nbsp;Profit
                           </div>
+                          <div class="tHead cluster">
+                            Other
+                          </div>
                         </div>
+                        
                         
                        
                     </div>
@@ -364,7 +374,8 @@
                                                                             description:selector.description,
                                                                             max:selector.max,
                                                                             }
-                                                                    | filterCheckBox:checkboxModel
+                                                                    | filterProfit:checkboxModel
+                                                                    | filterType:checkboxModel
                                                                             as results"
                                                                     >
                         
@@ -451,10 +462,20 @@
                                      <label for="{{emp.non_profit}}"></label>
                                   </div> 
                                 </div>
+                                <div class="checkTable cluster">
+                                  <div class="">
+                                     <input name="{{emp.other}}" type="checkbox"  checkbox-group/>
+                                     <label for="{{emp.other}}"></label>
+                                  </div> 
+                                </div>
                             </div>
+                            
                             
                            
                         </accordion-heading>
+                       <div class="accSpacer">
+                          <!-- -->
+                        </div>
                         <div class="accInner">
                           <div class="accInnerL">
                             <span class="accHeader">Fund Name : </span> {{emp.name}}<br/>
@@ -465,7 +486,13 @@
                           </div>
                           <div class="accInnerR">
                             <span class="accHeader">Web Site : </span> <a target="_blank" href="{{emp.website}}">{{emp.website}}</a><br/>
-                            <span class="accHeader">Supports : </span>{{emp.support}}<br/>
+                            <span class="accHeader">Supports : </span>
+                                        {{emp.profit ?  'Profit' : ' '}}  
+                                        {{emp.non_profit ?  ' | Non-Profit' : ' '}}  
+                                        {{emp.other ?  ' | Other: ' : ' '}} 
+                                        {{emp.support}}
+
+                            <br/>
                             <span class="accHeader">Specific Locations : </span><br/><div class="descTxt">{{emp.locations}}</div><br/>
                             <span class="accHeader">Quick View : </span><br/>
                               <div class="miniTable">
