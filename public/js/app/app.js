@@ -106,9 +106,7 @@ app.controller('appCtrl',function($scope,
                       $scope.empList = data;
                       angular.forEach($scope.empList,function(d,i){
                         //test..
-                        if(i < 3){
-                          console.log("JSON: " + JSON.stringify(d) );
-                        }
+                        
                         //
                         var curNum = parseInt(d.max);
 
