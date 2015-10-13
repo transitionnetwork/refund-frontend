@@ -77,6 +77,13 @@ body{
 	background-color:#fff;
 	border-color:#ccc;
 }
+
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary
+{
+	background-color:#0b9caa;
+}
+
 .btn-default{
 	border-color:#ccc;
 }
