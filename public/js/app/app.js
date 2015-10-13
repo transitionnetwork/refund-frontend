@@ -71,6 +71,8 @@ app.controller('appCtrl',function($scope,
                 });
     
     $scope.sreenResNum = 0;
+
+    $scope.MaxFundNum = 0;
     
     //WATCHERS////////////////////
 
@@ -108,7 +110,21 @@ app.controller('appCtrl',function($scope,
                           console.log("JSON: " + JSON.stringify(d) );
                         }
                         //
-                        console.log(":: profit: " + d.profit + " :non-profit: " + d.non_profit);
+                        var curNum = parseInt(d.max);
+
+                        //maxNumArr.forEach(function(dd,ii){
+                        if(curNum > $scope.MaxFundNum){
+                          $scope.MaxFundNum = curNum;
+                          $scope.selector.max = curNum + 1000000;
+                        }
+                        //});
+
+                        //MaxFundNum
+                        /*console.log(":: profit: " + d.profit +
+                                    " :non-profit: " + d.non_profit + 
+                                    " :other: " + d.other + 
+                                    " :support: " + d.supports);*/
+                        //console.log("max: " + d.max);
                       });
                       
 

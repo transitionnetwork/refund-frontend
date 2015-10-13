@@ -42,8 +42,9 @@ app.filter('filterProfit',function($filter){
 
 			if( (_checkBoxModel.profit == true && d.profit== true) 
 					|| (_checkBoxModel.nonprofit == true && d.non_profit== true) 
-				|| ( (_checkBoxModel.profit == false && d.profit== false) 
-					&& (_checkBoxModel.nonprofit == false && d.non_profit== false) )
+					|| ( (_checkBoxModel.profit == false && d.profit== false) 
+						&& (_checkBoxModel.nonprofit == false && d.non_profit== false) )
+					|| ( (_checkBoxModel.other == true) && (d.other == true) )
 				)
 			{
 				
@@ -56,7 +57,39 @@ app.filter('filterProfit',function($filter){
 	 }
 })
 
-			//	&& (_checkBoxModel.profit == true && d.profit== true) || (_checkBoxModel.nonprofit == true && d.non_profit== true)
+app.filter('filterMax',function($filter){
+	 return function (_obj,_selectMax){
+	 	console.log("<-------filer max----------->")
+	 	var newArr = [];
+		angular.forEach(_obj,function(d,i){//add to array / remove from array??
+
+			var maxVal = parseInt(d.max);
+			var selectVal = parseInt(_selectMax);
+			//temp
+			//Acumen Fund selectVal: 1500000 maxVal: 
+			//1600000
+			//1500000
+			
+			//
+
+			if( ( (selectVal > maxVal) && maxVal != 0 )
+				|| maxVal == 0
+				|| _selectMax == ""
+				)
+
+			{
+				//console.log(":-> name: " + d.name + " selectMax: " + _selectMax + " d.max: " + d.max);
+				//console.log(":-> name: " + d.name + " selectVal: " + selectVal + " maxVal: " + maxVal);
+				newArr.push(d);
+			}
+
+			});
+		return newArr;
+
+	 }
+})
+
+			
 
 
 //string max size

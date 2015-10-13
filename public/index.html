@@ -19,6 +19,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../css/bootstrap/bootstrap.3.1.1.min.css" rel="stylesheet">
+    <link href="../css/bootstrap/animate.css" rel="stylesheet">
 
     <!-- Bootstrap Template -->
     <link href="../css/bootstrap/jumbotron-narrow.css" rel="stylesheet" type="text/css">
@@ -212,8 +213,9 @@
                 <div class="input-group input-group-lg txtBoxNum">
                     <input type="search" 
                              ng-model="selector.max" 
-                             placeholder=" "
+                             placeholder="{{selector.max}}"
                              class="form-control text-box-num">
+                             
                  </div>
               </div>
               
@@ -365,17 +367,18 @@
                     </div>
                     <!-- -->
                     <accordion
-                        close-others="true"
+                        close-others="false"
                         class="tRowBody" 
                         ng-model="screenNum2"
                         ng-repeat="emp in empList  | toArray:false | filter:{name:selector.name,
                                                                             provider:selector.provider,
                                                                             countries:selector.countries,
-                                                                            description:selector.description,
-                                                                            max:selector.max,
+                                                                            description:selector.description
+                                                                            
                                                                             }
                                                                     | filterProfit:checkboxModel
                                                                     | filterType:checkboxModel
+                                                                    | filterMax:selector.max
                                                                             as results"
                                                                     >
                         
@@ -476,24 +479,27 @@
                        <div class="accSpacer">
                           <!-- -->
                         </div>
-                        <div class="accInner">
+                        <div class="accInner ">
                           <div class="accInnerL">
                             <span class="accHeader">Fund Name : </span> {{emp.name}}<br/>
                             <span class="accHeader">Fund Provider : </span> {{emp.provider}}<br/>
-                            <span class="accHeader">Region : </span> {{emp.state}}<br/>
-                            <span class="accHeader">Country : </span> {{emp.country}}<br/>
-                            <span class="accHeader">Description : </span> <br/><div class="descTxt">{{emp.description}}</div><br/>
+                            <span class="accHeader">Region : </span> {{emp.regions}}<br/>
+                            <span class="accHeader">Country : </span> {{emp.countries}}<br/>
+                            <div ng-show="{{emp.description ? 'true' : 'false' }}">
+                              <span class="accHeader">Description : </span> <br/><div class="descTxt">{{emp.description}}</div>
+                            </div>
                           </div>
-                          <div class="accInnerR">
+                          <div class=" accInnerR">
                             <span class="accHeader">Web Site : </span> <a target="_blank" href="{{emp.website}}">{{emp.website}}</a><br/>
                             <span class="accHeader">Supports : </span>
-                                        {{emp.profit ?  'Profit' : ' '}}  
+                                        <!--{{emp.profit ?  'Profit' : ' '}}  
                                         {{emp.non_profit ?  ' | Non-Profit' : ' '}}  
-                                        {{emp.other ?  ' | Other: ' : ' '}} 
-                                        {{emp.support}}
-
+                                        {{emp.other ?  ' | Other: ' : ' '}} -->
+                                        {{emp.supports}}
                             <br/>
-                            <span class="accHeader">Specific Locations : </span><br/><div class="descTxt">{{emp.locations}}</div><br/>
+                            <div ng-show="{{emp.locations ? 'true' : 'false' }}">
+                              <span class="accHeader">Specific Locations : </span><br/><div class="descTxt">{{emp.locations}}</div>
+                            </div>
                             <span class="accHeader">Quick View : </span><br/>
                               <div class="miniTable">
                                   <div class="miniRow">
