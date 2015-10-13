@@ -90,13 +90,13 @@
       
       <div class="col-lg-6 box-inner-txt">
         <div class="LH-LH">
-        <span class="txtH2">Filters:</span>
-        <br/>
-        <br/>
-          <span class="txtH2">Funds Found:</span>
-          <br/>
-          <span class="txtH2 reLogo2">{{sreenResNum}} </span>of<span class="txtH2 reLogo3">{{dataLength}} </span>
-      
+          <div class="totalFund">
+            <span class="txtH2 reLogo">Funds:</span>
+            <br/>
+            <span class="txtH2-1 reLogo2">{{sreenResNum}} </span>
+            of
+            <span class="txtH2-2 reLogo3">{{dataLength}} </span>
+          </div>
         </div>
         <div class="LH-RH">
             <div class="txtBoxWrap">
@@ -108,7 +108,7 @@
                     <input type="search" 
                        ng-model="selector.name" 
                        placeholder="Search free text"
-                       class="form-control text-box">
+                       class="form-control text-box inputTxt">
                   </div>
                   
                   
@@ -122,7 +122,7 @@
                     <input type="search" 
                        ng-model="selector.provider" 
                        placeholder="Search free text"
-                       class="form-control text-box">
+                       class="form-control text-box inputTxt">
                   </div>
                     
               </div>
@@ -138,10 +138,10 @@
                     dropdown is-open="status.country.isopen">
                 <button id="single-button-country" 
                         type="button" 
-                        class="btn btn-primary text-box" 
+                        class="btn btn-primary text-box inputTxt" 
                         dropdown-toggle 
                         ng-disabled="disabled">
-                    {{selector.countries}} <span class="caret"></span>
+                    <span class="inputTxt">{{selector.countries}}</span><span class="caret"></span>
                 </button>
                   <ul class="dropdown-menu" aria-labelledby="s01">
                     <li ng-repeat="place in countryList ">
@@ -160,7 +160,7 @@
       		<div class="txtBoxLabel">
       			Word Search:
       		</div>
-      		<div class="input-group input-group-lg txtBoxBox">
+      		<div class="input-group input-group-lg txtBoxBox inputTxt">
           
           <input type="search" 
                  ng-model="selector.description" 

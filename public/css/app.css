@@ -41,7 +41,7 @@ body{
 .container .jumbotron{
 	border-radius:8px;
 	padding:0px;
-	margin-bottom:10px;
+	margin-bottom:15px;
 	/*opacity:0.6;*/
 }
 
@@ -111,19 +111,7 @@ ul, ol{
 	color:#999;
 }
 
-.reLogo{
-	color:#007681;
-	font-weight: 700;
-}
-.reLogo2{
-	color:#000;
-	font-weight: 700;
-}
-.reLogo3{
-	color:#007681;
-	font-weight: 700;
-	font-size:36px;
-}
+
 .logo_TopRight{
 	background:url(../../img/logo_RH_01.jpg) 0px 5px no-repeat;
 	width:102px;
@@ -168,7 +156,7 @@ ul, ol{
 
 /* form */
 .btmBox{
-	margin-bottom:5px;
+	margin-bottom:12px;
 }
 
 .txtBoxWrap{
@@ -217,6 +205,11 @@ ul, ol{
 	display:block;
 	float:right;
 }
+
+.inputTxt{
+	font-size:18px;
+}
+
 .topTxt{
 	width:110px;
 }
@@ -231,6 +224,7 @@ ul, ol{
 	width:240px;
 	display:block;
 	float:left;
+	padding-top:6px;
 }
 
 .txtH1{
@@ -241,16 +235,63 @@ ul, ol{
 	font-size:18px;
 	padding-left:8px;
 }
+.txtH2-1{
+	font-weight:700;
+	font-size:42px;
+	padding-left:8px;
+}
+.txtH2-2{
+	font-weight:700;
+	font-size:58px;
+	padding-left:8px;
+}
+
+.reLogo{
+	color:#007681;
+	font-weight: 700;
+}
+.reLogo2{
+	color:#666;
+	
+}
+.reLogo3{
+	color:#007681;
+	
+}
+
+.totalFund{
+	background:#c3d5d7;
+	height:145px;
+	width:140px;
+	border-radius:8px;
+	margin-top:14px;
+	color:#999;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+	padding:10px;
+	text-align:left;
+	line-height:36px;
+
+}
+.totalFund hr{
+	color:#999;
+	border-top: 1px solid #999;
+	margin-bottom:5px;
+	margin-top:5px;
+}
+
+.txtMid{
+	padding-bottom:5px;
+}
 
 .txtRH_1{
-	padding-top:2px;
+	padding-top:8px;
 	width:230px;
 	float:left;
 
 }
 .txtRH_2{
 	/*background:#c3d5d6;*/
-	padding-top:2px;
+	padding-top:8px;
 	width:165px;
 	height:100%;
 	float:left;
