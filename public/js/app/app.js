@@ -148,8 +148,8 @@ app.controller('appCtrl',function($scope,
     };
 
     //INNIT/////////////////////////////////////////////////////
-    var countryListUrl = 'http://178.62.93.215/v1/countries';
-    var mainAPIUrl = 'http://178.62.93.215/v1/funds?format=frontend'
+    var countryListUrl = 'http://api.funds.reconomy.org/v1/countries';
+    var mainAPIUrl = 'http://api.funds.reconomy.org/v1/funds?format=frontend'
 
     $scope.loadData(mainAPIUrl,"main");
     //
