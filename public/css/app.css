@@ -24,7 +24,14 @@ body{
 	font-size:20px;
 }
 
+.spacer {
+	height:78px;
+	display:block;
+}
 
+.mid {
+
+}
 .container{
 	max-width:1022px;
 	
@@ -66,7 +73,7 @@ body{
 	padding-right:10px;
 	border-radius:8px;
 	height:33px;
-	width:160px;
+	width:180px;
 	text-align:left;
 	color:#131e29;
 
@@ -167,11 +174,11 @@ ul, ol{
 }
 
 .txtBoxWrap{
-	width:300px;
+	width:160px;
 	height:auto;
 	display:block;
 	float:left;
-	padding-top:5px;
+	padding-top:0px;
 }
 .txtBoxLabel{
 	color:#007681;
@@ -184,8 +191,8 @@ ul, ol{
 	color:#131e29;
 	/*font-size:22px;*/
 	display:block;
-	float:right;
-	width:160px;
+	float:left;
+	width:180px;
 }
 .txtBoxNumWrap{
 	padding-top:19px;
@@ -195,7 +202,7 @@ ul, ol{
 	font-size:22px;
 	display:block;
 	float:left;
-	width:200px;
+	width:180px;
 
 	/*margin-right:150px;
 	margin-bottom:10px;*/
@@ -208,9 +215,9 @@ ul, ol{
 	padding-top:20px;
 }
 .inputWrap1{
-	width:160px;
+	width:180px;
 	display:block;
-	float:right;
+	float:left;
 }
 
 .inputTxt{
@@ -218,7 +225,7 @@ ul, ol{
 }
 
 .topTxt{
-	width:110px;
+	width:150px;
 }
 .LH-LH{
 	width:160px;
@@ -244,12 +251,12 @@ ul, ol{
 }
 .txtH2-1{
 	font-weight:700;
-	font-size:42px;
+	font-size:46px;
 	padding-left:8px;
 }
 .txtH2-2{
 	font-weight:700;
-	font-size:58px;
+	font-size:68px;
 	padding-left:8px;
 }
 
@@ -268,7 +275,7 @@ ul, ol{
 
 .totalFund{
 	background:#c3d5d7;
-	height:145px;
+	height:155px;
 	width:140px;
 	border-radius:8px;
 	margin-top:14px;
@@ -454,8 +461,8 @@ input[type=checkbox]:checked + label:before {
 }
 
 .tRowHead {
-	height:55px;
-	padding-top:30px;
+	height:75px;
+	padding-top:55px;
 	/*padding-left:10px;*/
 }
 
@@ -510,14 +517,14 @@ input[type=checkbox]:checked + label:before {
 	width:25px;
 }
 .col4{
-	width:70px;
+	width:85px;
 }
 .col5{
-	width:130px;
+	width:110px;
 	
 }
 .col6{
-	width:220px;/*170*/
+	width:225px;
 	padding-top:5px;
 }
 .cellCol{
@@ -528,6 +535,9 @@ input[type=checkbox]:checked + label:before {
 	display:block;
 	float:left;
 
+}
+.cluster .cTxt{
+	padding-left:10px;
 }
 .col7{
 	width:25px;

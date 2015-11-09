@@ -101,22 +101,8 @@
         <div class="LH-RH">
             <div class="txtBoxWrap">
                   <div class="txtBoxLabel topTxt">
-                    <span class='txtH1'>Fund: </span>
+                    Fund Provider:
                   </div>
-                  <!-- -->
-                  <div class="inputWrap1">
-                    <input type="search" 
-                       ng-model="selector.name" 
-                       placeholder="Search free text"
-                       class="form-control text-box inputTxt">
-                  </div>
-                  
-                  
-              </div>
-          	<div class="txtBoxWrap">
-              		<div class="txtBoxLabel topTxt">
-              			<span class='txtH1'>Provider:</span>
-              		</div>
                   <!-- -->
                   <div class="inputWrap1">
                     <input type="search" 
@@ -126,6 +112,9 @@
                   </div>
                     
               </div>
+
+            
+          	
               <!-- -->
               
     		<!-- -->
@@ -158,7 +147,7 @@
 		<!-- -->
 		<div class="txtBoxWrap btmBox">
       		<div class="txtBoxLabel">
-      			Word Search:
+      			Description Search:
       		</div>
       		<div class="input-group input-group-lg txtBoxBox inputTxt">
           
@@ -176,36 +165,69 @@
       </div> <!-- /col-lg-6 box-inner-txt -->
       <div class="col-lg-6 box-inner-txt">
       		<div class="txtRH_1">
+           
       			<!--<span class="txtH2" >Org. Type</span>-->
-      			 <ul class="radioList">
-      			 	<li>
-					    <input id="profit" 
-                     type="checkbox" 
-                     ng-model="checkboxModel.profit"
-                     name="profit" 
-                     >
-					    <label class="check" for="profit">Profit</label>
-              
-				    </li>
-				    <li>
-					    <input id="nonprofit" 
-                     type="checkbox" 
-                     ng-model="checkboxModel.nonprofit"
-                     name="nonprofit" 
-                     >
-					    <label class="check" for="nonprofit">Non-profit</label>
-             
-				    </li>
-            <li>
-              <input id="other" 
-                     type="checkbox" 
-                     ng-model="checkboxModel.other"
-                     name="other" 
-                     >
-              <label class="check" for="other">Other</label>
-             
-            </li>
-				</ul>
+        		<!--
+            	 <ul class="radioList">
+        			 	<li>
+  					    <input id="profit" 
+                       type="checkbox" 
+                       ng-model="checkboxModel.profit"
+                       name="profit" 
+                       >
+  					    <label class="check" for="profit">Profit</label>
+                
+  				    </li>
+  				    <li>
+  					    <input id="nonprofit" 
+                       type="checkbox" 
+                       ng-model="checkboxModel.nonprofit"
+                       name="nonprofit" 
+                       >
+  					    <label class="check" for="nonprofit">Non-profit</label>
+               
+  				    </li>
+              <li>
+                <input id="other" 
+                       type="checkbox" 
+                       ng-model="checkboxModel.other"
+                       name="other" 
+                       >
+                <label class="check" for="other">Other</label>
+               
+              </li>
+  				  </ul>
+            -->
+        <div class="txtBoxWrap">
+                  <div class="txtBoxLabel topTxt">
+                    Fund Name/ Type: 
+                  </div>
+                  <!-- -->
+                  <div class="inputWrap1">
+                    <input type="search" 
+                       ng-model="selector.name" 
+                       placeholder="Search free text"
+                       class="form-control text-box inputTxt">
+                  </div>
+                  
+                  
+              </div>
+
+        <div class="txtBoxWrap">
+                  <div class="txtBoxLabel">
+                    Specific Location:
+                  </div>
+                  <!-- -->
+                  <div class="inputWrap1">
+                    <input type="search" 
+                       ng-model="selector.locations" 
+                       placeholder="Search free text"
+                       class="form-control text-box inputTxt">
+                  </div>
+                  
+                  
+              </div>
+            
         <div class="txtBoxNumWrap" >
               <div class="txtBoxLabel">
                 Max Fund Size:
@@ -223,23 +245,32 @@
       		<div class="txtRH_2">
       			<!--<span class="txtH2">Fund Type</span>-->
       			<ul class="radioList">
-      			 	<li>
-					    <input id="grant" 
+      			 	<li >
+					    
+              <input id="grant" 
                      type="checkbox"
                      ng-model="checkboxModel.grant"
                      name="grant"  
                      >
-					    <label class="check" for="grant">Grant</label>
-              
-				    </li>
+  					    <label class="check" 
+                       for="grant" 
+                       tooltip="Grant Description" 
+                       tooltip-placement="right"  >
+                       Grant
+                </label>
+            </li>
 				    <li>
 					    <input id="debt"
                      type="checkbox" 
                      ng-model="checkboxModel.debt"
                      name="debt"
                      >
-					    <label class="check" for="debt">Debt</label>
-              
+  					    <label class="check" 
+                       for="debt" 
+                       tooltip="Debt Description" 
+                       tooltip-placement="right">
+                       Debt
+                </label>
 				    </li>
 				    <li>
 					    <input id="equity" 
@@ -247,7 +278,12 @@
                      ng-model="checkboxModel.equity"
                      name="equity" 
                      >
-					    <label class="check" for="equity">Equity</label>
+  					    <label class="check" 
+                       for="equity"
+                       tooltip="Equity Description" 
+                       tooltip-placement="right">
+                       Equity
+                </label>
              
 				    </li>
 				    <li>
@@ -256,7 +292,12 @@
                      ng-model="checkboxModel.support"
                      name="support" 
                      >
-					    <label class="check" for="support">Support</label>
+  					    <label class="check" 
+                       for="support"
+                       tooltip="Support Description" 
+                       tooltip-placement="right">
+                       Support
+                </label>
               
 				    </li>
 				    <li>
@@ -265,7 +306,12 @@
                      ng-model="checkboxModel.platform"
                      name="platform" 
                      >
-					    <label class="check" for="platform">Platform</label>
+  					    <label class="check" 
+                       for="platform"
+                       tooltip="Platform Description" 
+                       tooltip-placement="right">
+                       Platform
+                </label>
               
 				    </li>
 				    <li>
@@ -274,7 +320,12 @@
                      ng-model="checkboxModel.legislation"
                      name="legislation" 
                      >
-					    <label class="check" for="legislation">Legislation</label>
+  					    <label class="check" 
+                       for="legislation"
+                       tooltip="Grant Description" 
+                       tooltip-placement="right">
+                       Legislation
+                </label>
               
 				    </li>
 				</ul>
@@ -303,14 +354,14 @@
               <div >
                 <div class="tableList">
                     <div class="tRowHead" >
-                        <div class="col col1">
-                          <div class="tHead" >
-                            Fund
-                          </div>
-                        </div>
                         <div class="col col2">
                           <div class="tHead" >
-                            Provider
+                            Fund Provider
+                          </div>
+                        </div>
+                        <div class="col col1">
+                          <div class="tHead" >
+                            Fund/ Type
                           </div>
                         </div>
                         <div class="col col3">
@@ -320,7 +371,7 @@
                         </div>
                         <div class="col col4" >
                           <div class="tHead">
-                            Date
+                            Last Updated
                           </div>
                         </div>
                         <div class="col col5">
@@ -330,23 +381,24 @@
                         </div>
                         <div class="col col6 ">
                           <div class="tHead cluster">
-                            Grant
+                            <div class="cTxt">Grant</div>
                           </div>
                           <div class="tHead cluster">
-                            Debt
+                            <div class="cTxt">Debt</div>
                           </div>
                           <div class="tHead cluster">
-                            Equity
+                            <div class="cTxt">Equity</div>
                           </div>
                           <div class="tHead cluster">
-                            Support
+                            <div class="cTxt">Support</div>
                           </div>
                           <div class="tHead cluster">
-                            Platform
+                            <div class="cTxt">Platform</div>
                           </div>
                           <div class="tHead cluster">
-                            Legislation
+                            <div class="cTxt">Legislation</div>
                           </div>
+                          <!--
                           <div class="tHead cluster">
                             Profit
                           </div>
@@ -356,6 +408,7 @@
                           <div class="tHead cluster">
                             Other
                           </div>
+                          -->
                         </div>
                         
                         
@@ -365,18 +418,25 @@
                     <div class="tRow tLine">
                       <!--spacer-->
                     </div>
-                    <!-- -->
+                    <!-- 
+                              ,
+                              ,
+                              ,
+                              
+                              }
+                      | filterType:checkboxModel
+                      
+                    -->
                     <accordion
                         close-others="false"
                         class="tRowBody" 
                         ng-model="screenNum2"
                         ng-repeat="emp in empList  | toArray:false | filter:{name:selector.name,
-                                                                            provider:selector.provider,
-                                                                            countries:selector.countries,
-                                                                            description:selector.description
-                                                                            
+                                                                             provider:selector.provider,
+                                                                             countries:selector.countries,
+                                                                             description:selector.description,
+                                                                             locations:selector.locations
                                                                             }
-                                                                    | filterProfit:checkboxModel
                                                                     | filterType:checkboxModel
                                                                     | filterMax:selector.max
                                                                             as results"
@@ -384,20 +444,21 @@
                         
                         <!-- -->
                         
-                        <accordion-group 
-                         >
+                        <accordion-group >
 
                           <accordion-heading>
                           
-                            <div class="col col1 cellCol" 
-                                 ng-bind-html = "emp.name | isDef"
-                              >
-                            </div>
-                            <div class="col col2 cellCol"
+                            <div class="col col1 cellCol"
                                  ng-bind-html = "emp.provider | isDef"
                             >
                              
                             </div>
+
+                            <div class="col col2 cellCol" 
+                                 ng-bind-html = "emp.name | isDef"
+                              >
+                            </div>
+                            
                             <div class="col col3 cellCol">
       
                               
@@ -453,6 +514,7 @@
                                      <label for="{{emp.legislation}}"></label>
                                   </div> 
                                 </div>
+                                <!--
                                 <div class="checkTable cluster">
                                   <div class="">
                                      <input name="{{emp.profit}}" type="checkbox"  checkbox-group/>
@@ -471,6 +533,7 @@
                                      <label for="{{emp.other}}"></label>
                                   </div> 
                                 </div>
+                                -->
                             </div>
                             
                             
@@ -483,7 +546,7 @@
                           <div class="accInnerL">
                             <span class="accHeader">Fund Name : </span> {{emp.name}}<br/>
                             <span class="accHeader">Fund Provider : </span> {{emp.provider}}<br/>
-                            <span class="accHeader">Region : </span> {{emp.regions}}<br/>
+                           <!-- <span class="accHeader">Region : </span> {{emp.regions}}<br/>-->
                             <span class="accHeader">Country : </span> {{emp.countries}}<br/>
                             <div ng-show="{{emp.description ? 'true' : 'false' }}">
                               <span class="accHeader">Description : </span> <br/><div class="descTxt">{{emp.description}}</div>

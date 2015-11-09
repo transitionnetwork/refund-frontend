@@ -86,6 +86,7 @@ app.controller('appCtrl',function($scope,
     $scope.updateIt2 = function(_key,_item){
         if(_item == "All"){
             $scope.selector = {};
+            $scope.selector.max = 16000000;//?
         }else{
             $scope.selector[_key] = _item;
         }
@@ -104,6 +105,8 @@ app.controller('appCtrl',function($scope,
                 switch(_name){
                   case "main":
                       $scope.empList = data;
+
+                      //console.log("DATA : " + JSON.stringify($scope.empList) );
                       angular.forEach($scope.empList,function(d,i){
                         //test..
                         
@@ -137,7 +140,27 @@ app.controller('appCtrl',function($scope,
                       
                       rawData.unshift({"name":"All"});
 
-                      $scope.countryList = rawData;
+                      //$scope.countryList = rawData;
+                      //manula overwrite..
+                      $scope.countryList = [
+                                            {
+                                                "name": "All"
+                                            },
+                                            {
+                                                "name": "England"
+                                            },
+                                            {
+                                                "name": "Scotland"
+                                            },
+                                            {
+                                                "name": "Wales"
+                                            },
+                                            {
+                                                "name": "Ireland"
+                                            }
+                                        ];
+
+                      //console.log(":->> raw: " + JSON.stringify(rawData) ) ;
                       
                   break; 
                 }

@@ -1,5 +1,27 @@
 /* filters.js*/
 
+//numeric
+app.filter('numFormat', function() { 
+			return function (_val,_cur,_context,_size) { // Nine Zeroes for Billions 
+				
+				var val =0;
+				val = parseFloat(_val);
+				
+				//return val + "K";
+				return Math.abs(Number(val)) >= 1.0e+3 ? " " + _cur + "" + (Math.abs(Number(val))).toFixed(0) + "K"
+				: val + "K";
+				/*
+				return Math.abs(Number(val)) >= 1.0e+3 ? "<div class='digit03c'>" + _cur + "" + (Math.abs(Number(val))).toFixed(0) + "</div>"
+				: Math.abs(Number(val)) >= 1.0e+2 ? "<div class='digit0c'>" + _cur + "" + (Math.abs(Number(val))).toFixed(0) + "</div>"
+				: Math.abs(Number(val)) >= 1.0e+1 ? "<div class='digit01c'>" + _cur + "" + Math.abs(Number(val)).toFixed(0) + "</div>"
+				: Math.abs(Number(val)) >= 1.0 ? "<div class='digit00c'>" + _cur + "" + Math.abs(Number(val)).toFixed(0) + "</div>"
+				: "<div class='digit0c'>" + _cur + "" + Math.abs(Number(val)).toFixed(2) + "</div>";
+				*/
+				
+
+				} 
+			}); 
+
 //1st Letter Capital
 app.filter('capitalOne', function() {
 	return function(_str) {
@@ -25,7 +47,9 @@ app.filter('filterType',function($filter){
 				){
 				
 				newArr.push(d);
-			}
+			}/*else{
+				console.log("filter: " + d.name);
+			}*/
 
 			});
 		return newArr;
