@@ -427,6 +427,7 @@ input[type=checkbox]:checked + label:before {
 .scotOn,.scotOff{
 	background:url(../../svg/flag_scot.svg) no-repeat;
 }
+
 .eAfricOn,.eAfricOff{
 	background:url(../../svg/flag_e_africa.svg) no-repeat;
 }
@@ -454,15 +455,51 @@ input[type=checkbox]:checked + label:before {
 .defaultFlag{
 	background:url(../../svg/flag_default.svg) no-repeat;
 }
+.infoOn{
+	
+	background:url(../../svg/icon_info.svg) no-repeat;
+	-ms-transform: scale(0.7,0.7); /* IE 9 */
+    -webkit-transform: scale(0.7,0.7); /* Safari */
+    transform: scale(0.7,0.7);
+}
+
+.infoRH{
+	float:right;
+	margin-left:5px;
+	margin-top:2px;
+}
+.infoLH{
+	float:right;
+	margin-top:0px;
+	margin-left:5px;
+}
+.infoTable{
+	float:left;
+	
+}
+.infoOn:hover{
+	cursor:pointer;
+}
+
+.tooltip{
+	text-align: left;
+}
+
+
+
 /* table */
 
 .tableBox{
 	background:url(../../img/tableBg.jpg) repeat-y;
 }
 
+.tRowInfo{
+	height:15px;
+}
+
 .tRowHead {
-	height:75px;
-	padding-top:55px;
+	height:55px;
+	padding-top:35px;
 	/*padding-left:10px;*/
 }
 

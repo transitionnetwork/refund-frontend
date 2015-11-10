@@ -100,9 +100,14 @@
         </div>
         <div class="LH-RH">
             <div class="txtBoxWrap">
-                  <div class="txtBoxLabel topTxt">
+                  <div class="txtBoxLabel">
                     Fund Provider:
+                     <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.provider}}" 
+                       tooltip-placement="right" 
+                        ></div>
                   </div>
+
                   <!-- -->
                   <div class="inputWrap1">
                     <input type="search" 
@@ -121,7 +126,11 @@
     		<div class="txtBoxWrap">
           		<div class="txtBoxLabel">
           			Country:
-          		</div>
+                <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.countries}}" 
+                       tooltip-placement="right" 
+                        ></div>
+          		    </div>
               <!-- -->
               <div class="btn-group txtBoxBox" 
                     dropdown is-open="status.country.isopen">
@@ -148,6 +157,10 @@
 		<div class="txtBoxWrap btmBox">
       		<div class="txtBoxLabel">
       			Description Search:
+            <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.desc}}" 
+                       tooltip-placement="right" 
+                        ></div>
       		</div>
       		<div class="input-group input-group-lg txtBoxBox inputTxt">
           
@@ -200,7 +213,11 @@
             -->
         <div class="txtBoxWrap">
                   <div class="txtBoxLabel topTxt">
-                    Fund Name/ Type: 
+                    Fund Name/ Type:
+                    <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.fType}}" 
+                       tooltip-placement="right" 
+                        ></div> 
                   </div>
                   <!-- -->
                   <div class="inputWrap1">
@@ -216,6 +233,10 @@
         <div class="txtBoxWrap">
                   <div class="txtBoxLabel">
                     Specific Location:
+                    <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.specLoc}}" 
+                       tooltip-placement="right" 
+                        ></div> 
                   </div>
                   <!-- -->
                   <div class="inputWrap1">
@@ -231,6 +252,10 @@
         <div class="txtBoxNumWrap" >
               <div class="txtBoxLabel">
                 Max Fund Size:
+                <div class="icons infoOn infoLH"
+                       tooltip="{{infoHover.maxFund}}" 
+                       tooltip-placement="right" 
+                        ></div> 
                 </div>
                 <div class="input-group input-group-lg txtBoxNum">
                     <input type="search" 
@@ -254,10 +279,15 @@
                      >
   					    <label class="check" 
                        for="grant" 
-                       tooltip="Grant Description" 
-                       tooltip-placement="right"  >
+                        >
                        Grant
+                       <div class="icons infoOn infoRH"
+                             tooltip="{{infoHover.grant}}" 
+                             tooltip-placement="right" 
+                        ></div>
+
                 </label>
+                
             </li>
 				    <li>
 					    <input id="debt"
@@ -267,10 +297,14 @@
                      >
   					    <label class="check" 
                        for="debt" 
-                       tooltip="Debt Description" 
-                       tooltip-placement="right">
+                       >
                        Debt
+                       <div class="icons infoOn infoRH"
+                             tooltip="{{infoHover.debt}}" 
+                             tooltip-placement="right" 
+                        ></div>
                 </label>
+                
 				    </li>
 				    <li>
 					    <input id="equity" 
@@ -280,10 +314,14 @@
                      >
   					    <label class="check" 
                        for="equity"
-                       tooltip="Equity Description" 
-                       tooltip-placement="right">
+                       >
                        Equity
+                       <div class="icons infoOn infoRH"
+                           tooltip="{{infoHover.equity}}" 
+                           tooltip-placement="right" 
+                      ></div>
                 </label>
+                
              
 				    </li>
 				    <li>
@@ -294,10 +332,14 @@
                      >
   					    <label class="check" 
                        for="support"
-                       tooltip="Support Description" 
-                       tooltip-placement="right">
+                       >
                        Support
+                       <div class="icons infoOn infoRH"
+                             tooltip="{{infoHover.support}}" 
+                             tooltip-placement="right" 
+                        ></div>
                 </label>
+                
               
 				    </li>
 				    <li>
@@ -308,10 +350,14 @@
                      >
   					    <label class="check" 
                        for="platform"
-                       tooltip="Platform Description" 
-                       tooltip-placement="right">
+                       >
                        Platform
+                        <div class="icons infoOn infoRH"
+                             tooltip="{{infoHover.platform}}" 
+                             tooltip-placement="right" 
+                        ></div>
                 </label>
+                
               
 				    </li>
 				    <li>
@@ -322,10 +368,14 @@
                      >
   					    <label class="check" 
                        for="legislation"
-                       tooltip="Grant Description" 
-                       tooltip-placement="right">
+                       >
                        Legislation
+                       <div class="icons infoOn infoRH"
+                             tooltip="{{infoHover.legislation}}" 
+                             tooltip-placement="right" 
+                        ></div>
                 </label>
+                
               
 				    </li>
 				</ul>
@@ -353,23 +403,58 @@
               </div>
               <div >
                 <div class="tableList">
+                    <div class="tRowInfo">
+                      <div class="col col2">
+                        <div class="icons infoOn infoTable"
+                             tooltip="{{infoHover.providerT}}" 
+                             tooltip-placement="right" 
+                              ></div> 
+                      </div>
+                      <div class="col col1">
+                        <div class="icons infoOn infoTable"
+                                 tooltip="{{infoHover.fundT}}" 
+                                 tooltip-placement="right" 
+                                  ></div> 
+                      </div>
+                      <div class="col col3">
+                      </div>
+                      <div class="col col4">
+                        <div class="icons infoOn infoTable"
+                                 tooltip="{{infoHover.lastUp}}" 
+                                 tooltip-placement="right" 
+                                  ></div> 
+                      </div>
+                      <div class="col col5">
+                        <div class="icons infoOn infoTable"
+                                 tooltip="{{infoHover.countryT}}" 
+                                 tooltip-placement="right" 
+                                  ></div> 
+                        
+                      </div>
+                      <div class="col col6">
+                      </div>
+                    </div>
                     <div class="tRowHead" >
                         <div class="col col2">
+                          
                           <div class="tHead" >
                             Fund Provider
                           </div>
                         </div>
                         <div class="col col1">
+                          
                           <div class="tHead" >
                             Fund/ Type
                           </div>
                         </div>
                         <div class="col col3">
+
                           <div class="tHead">
                             <!--Country-->
                           </div>
                         </div>
                         <div class="col col4" >
+                          
                           <div class="tHead">
                             Last Updated
                           </div>
