@@ -229,7 +229,9 @@
                   
                   
               </div>
-
+        <div class="boxSpacer">
+          <!-- -->
+        </div>
         <div class="txtBoxWrap">
                   <div class="txtBoxLabel">
                     Specific Location:
@@ -248,7 +250,7 @@
                   
                   
               </div>
-            
+         <!--   
         <div class="txtBoxNumWrap" >
               <div class="txtBoxLabel">
                 Max Fund Size:
@@ -265,8 +267,9 @@
                              
                  </div>
               </div>
-              
+          -->
       		</div>
+          
       		<div class="txtRH_2">
       			<!--<span class="txtH2">Fund Type</span>-->
       			<ul class="radioList">
@@ -510,6 +513,8 @@
                               
                               }
                       | filterType:checkboxModel
+                      | filterMax:selector.max
+                                                                            
                       
                     -->
                     <accordion
@@ -523,8 +528,7 @@
                                                                              locations:selector.locations
                                                                             }
                                                                     | filterType:checkboxModel
-                                                                    | filterMax:selector.max
-                                                                            as results"
+                                                                    as results"
                                                                     >
                         
                         <!-- -->

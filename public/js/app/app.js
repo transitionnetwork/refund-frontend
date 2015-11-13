@@ -129,6 +129,7 @@ app.controller('appCtrl',function($scope,
                       $scope.empList = data;
 
                       //console.log("DATA : " + JSON.stringify($scope.empList) );
+                      
                       angular.forEach($scope.empList,function(d,i){
                         //test..
                         

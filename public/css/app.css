@@ -180,6 +180,12 @@ ul, ol{
 	float:left;
 	padding-top:0px;
 }
+.boxSpacer{
+	display:block;
+	float:left;
+	height:51px;
+	width:160px;
+}
 .txtBoxLabel{
 	color:#007681;
 	font-size:16px;
@@ -482,8 +488,10 @@ input[type=checkbox]:checked + label:before {
 }
 
 .tooltip-inner{
+	padding:5px;
 	width:200px;
 	text-align: left;
+	font-size:16px;
 }
 
 
