@@ -115,13 +115,13 @@ ul, ol{
 
 .logo_TopLeft{
 	/*background:url(../../img/logo_LH_01.jpg) no-repeat;*/
-	width:600px;
+	width:850px;
 	height:50px;
 	
 	font-size:36px;
 }
 .reTxt{
-	font-size:28px;
+	font-size:24px;
 	color:#999;
 }
 
@@ -481,7 +481,8 @@ input[type=checkbox]:checked + label:before {
 	cursor:pointer;
 }
 
-.tooltip{
+.tooltip-inner{
+	width:200px;
 	text-align: left;
 }
 
