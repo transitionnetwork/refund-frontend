@@ -32,7 +32,7 @@ body{
 .mid {
 
 }
-.container{
+.container{	
 	max-width:1022px;
 	
 }
@@ -183,7 +183,7 @@ ul, ol{
 .boxSpacer{
 	display:block;
 	float:left;
-	height:51px;
+	/*height:51px;*/
 	width:160px;
 }
 .txtBoxLabel{
