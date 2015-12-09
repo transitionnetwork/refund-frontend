@@ -95,11 +95,21 @@ app.controller('appCtrl',function($scope,
     $scope.sreenResNum = 0;
 
     $scope.MaxFundNum = 0;
+
+    $scope.splashOn = true;
+    $scope.scrnScroll = "hidden";
+
+    $scope.splashGo = function(d){
+        $scope.scrnScroll = "auto";
+        $scope.splashOn = false;
+        console.log("GO!");
+    }
     
     //WATCHERS////////////////////
 
     $scope.$watch('results.length',function(nV,oV){
         $scope.sreenResNum = nV ;
+
     });
 
     //FUNCTIONS//////////////////////////

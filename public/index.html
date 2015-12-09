@@ -58,7 +58,7 @@
     <![endif]-->
   </head>
 
-  <body>
+  <body ng-style="{'overflow': scrncroll}">
 
     <div class="container" ng-controller="appCtrl">
       
@@ -422,10 +422,12 @@
                       <div class="col col3">
                       </div>
                       <div class="col col4">
+                      <!--
                         <div class="icons infoOn infoTable"
                                  tooltip="{{infoHover.lastUp}}" 
                                  tooltip-placement="right" 
                                   ></div> 
+                                  -->
                       </div>
                       <div class="col col5">
                         <div class="icons infoOn infoTable"
@@ -457,10 +459,12 @@
                           </div>
                         </div>
                         <div class="col col4" >
-                          
+                          <!--
                           <div class="tHead">
                             Last Updated
                           </div>
+                          -->
+                          
                         </div>
                         <div class="col col5">
                           <div class="tHead">
@@ -552,8 +556,9 @@
       
                               
                             </div>
+                            <!-- ng-bind-html = "emp.date | isDef" -->
                             <div class="col col4 cellCol"
-                                 ng-bind-html = "emp.date | isDef"
+                                 
                                  >
                             </div>
                             <div class="col col5 cellCol">
@@ -640,7 +645,13 @@
                             <div ng-show="{{emp.description ? 'true' : 'false' }}">
                               <span class="accHeader">Description : </span> <br/><div class="descTxt">{{emp.description}}</div>
                             </div>
-                          </div>
+                            <!-- -->
+                            <div ng-show="{{emp.date ? 'true' : 'false' }}">
+                              <span class="accHeader">Last Updated : </span>{{emp.date | isDef}}
+                            </div>
+
+                          </div>  
+
                           <div class=" accInnerR">
                             <span class="accHeader">Web Site : </span> <a target="_blank" href="{{emp.website}}">{{emp.website}}</a><br/>
                             <span class="accHeader">Supports : </span>
@@ -713,6 +724,49 @@
       </footer>
 
     </div> <!-- /container -->
+    <!-- intro div -->
+    
+    <div class="splashPage animate-fade" ng-show="splashOn">
+        <div class="splashContainer">
+            <div class="clearfix btmBorder ">
+                  <div class="col-lg-6 logo_TopLeft">
+                    <span class="reLogo">R</span>Economy Project : <span class="reTxt">Funding & Investment for your Community Enterprise</span>
+                  </div>
+                  <div class="col-lg-6 logo_TopRight">
+                  </div>  
+              </div>
+          <!-- -->
+            <div class="splashBox jumboSplash ">
+              <div class="splashTxt">
+                <h2>Hello and welcome to the REconomy funding database. </h2>
+                <br/>
+                The database contains over 200 funds focused on providing grants, equity and social investment to Transition-orientated 
+                funds (TOE).
+                <br/>
+                To access the database click on the <strong>Start Now</strong> button below.
+                <br/><br/>
+                We’ve also put together a guide called <a href="http://www.reconomy.org/wp-content/uploads/2015/08/Transition_Enterprise_Handbook_FINAL-v2.pdf">The Transition Enterprise Guide</a> which is packed full of information for anyone 
+                thinking about starting a Transition Enterprise (even if they don't wish to use the label) or anyone involved in supporting 
+                them. It provides information on the start-up process and the wealth of support that is available. To download a copy of 
+                the guide please click here
+                <br/>
+                If you have comments / updates then please <a href="mailto:lauraouthart@transitionnetwork.org">email</a>
+                <br/><br/>
+                <button ng-click="splashGo()" class="splashBtn">
+                  Start Now
+                </button>
+                <br/>
+                <footer class="footer">
+                  <p>&copy; REconomy 2015</p>
+                </footer>
+
+              </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
 
 	
   </body>

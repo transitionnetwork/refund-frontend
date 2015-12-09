@@ -3,9 +3,81 @@ body{
 	/*background:url(../../img/bgTemp.jpg) center top no-repeat;*/
 	font-family: 'Rokkitt', serif;
 	padding:0px;
+	/*overflow:hidden;*/
+
 }
 
+/* splashPage */
 
+.splashPage{
+	position:absolute;
+	display:block;
+	top:0px;
+	left:0px;
+	z-index:10000;
+	background:url(../../img/splashBg.jpg) center center no-repeat #fff;
+	background-size : cover ;
+	width:100%;
+	height:100%;
+	margin: auto;
+	
+
+}
+.splashContainer{
+	width:1035px;
+
+	display:block;
+	margin:0px auto;
+
+}
+
+.splashBox{
+	
+	
+	width:1035px;
+	display:block;
+	margin:0px auto;
+	margin-top:40px;
+}
+
+.splashTxt{
+	padding-left:40px;
+	padding-right:40px;
+	padding-bottom:40px;
+	padding-top:20px;
+	font-size:18px;
+	text-align:center;
+}
+
+.jumboSplash{
+	background: #dedfdf;
+    border: 1px solid #afafb0;
+    border-radius: 8px;
+}
+
+button.splashBtn{
+	cursor:pointer;
+}
+.splashBtn{
+    
+    width: 120px;
+    height: 120px;
+    background: #0a8e9d;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    border:1px solid #fff;
+    border-radius: 60px;
+    color:#fff;
+    font-size:22px;
+
+    cursor:pointer;
+    outline:none;
+
+}
+.splashBtn:hover{
+	color:#000;
+	cursor:pointer;
+}
 
 .h3, h3{
 	margin-top:0px;
@@ -563,10 +635,10 @@ input[type=checkbox]:checked + label:before {
 	width:25px;
 }
 .col4{
-	width:85px;
+	width:0px;/*85*/
 }
 .col5{
-	width:110px;
+	width:190px;
 	
 }
 .col6{
