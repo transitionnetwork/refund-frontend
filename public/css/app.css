@@ -4,8 +4,9 @@ body{
 	font-family: 'Rokkitt', serif;
 	padding:0px;
 	/*overflow:hidden;*/
-	background:url(../../img/splashBg.jpg) center center no-repeat fixed #fff;
-	background-size : cover ;
+	/*background:url(../../img/splashBg.jpg) center center no-repeat fixed #fff;
+	background-size : cover ;*/
+	background:#fff;
 }
 a:link{
 	outline:none;
