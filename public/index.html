@@ -58,9 +58,9 @@
     <![endif]-->
   </head>
 
-  <body ng-style="{'overflow': scrncroll}">
+  <body ng-controller="appCtrl" ng-class="{{splashOn ? 'flowOff' : 'flowOn'}}" >
 
-    <div class="container" ng-controller="appCtrl">
+    <div class="container" >
       
       <div class="clearfix btmBorder ">
         <div class="col-lg-6 logo_TopLeft">
@@ -445,12 +445,23 @@
                           <div class="tHead" >
                             Fund Provider
                           </div>
+                          <!-- {  'sBtnColor2' : orderSort == 'provider'  } -->
+                          <button ng-click="changeOrder('provider')" 
+                                  class="sortBtn" 
+                                  ng-class="orderSort == 'provider' ? 'sBtnColor2' : 'sBtnColor1' " > 
+                          A-Z
+                          </button>
                         </div>
                         <div class="col col1">
                           
                           <div class="tHead" >
                             Name/ Type
                           </div>
+                          <button ng-click="changeOrder('name')" 
+                                  class="sortBtn"
+                                  ng-class="orderSort == 'name' ? 'sBtnColor2' : 'sBtnColor1' " >
+                          A-Z
+                          </button>
                         </div>
                         <div class="col col3">
 
@@ -516,9 +527,11 @@
                               ,
                               
                               }
-                      | filterType:checkboxModel
-                      | filterMax:selector.max
-                                                                            
+                      
+                      | reverse  //works   
+
+                      | orderBy:orderSort.provider
+                      | orderBy:orderSort.type                                         
                       
                     -->
                     <accordion
@@ -532,6 +545,7 @@
                                                                              locations:selector.locations
                                                                             }
                                                                     | filterType:checkboxModel
+                                                                    | sortCol:orderSort
                                                                     as results"
                                                                     >
                         
@@ -740,12 +754,11 @@
               <div class="splashTxt">
                 <h2>Hello and welcome to the REconomy funding database. </h2>
                 <br/>
-                The database contains over 200 funds focused on providing grants, equity and social investment to Transition-orientated 
-                funds (TOE).
+                The database contains over 200 funds focused on providing grants, equity and social investment to Transition-orientated funds (TOF).
                 <br/>
                 To access the database click on the <strong>Start Now</strong> button below.
                 <br/><br/>
-                We’ve also put together a guide called <a href="http://www.reconomy.org/wp-content/uploads/2015/08/Transition_Enterprise_Handbook_FINAL-v2.pdf">The Transition Enterprise Guide</a> which is packed full of information for anyone 
+                We’ve also put together a guide called <a href="http://www.reconomy.org/wp-content/uploads/2015/08/Transition_Enterprise_Handbook_FINAL-v2.pdf" target="_blank">The Transition Enterprise Guide</a> which is packed full of information for anyone 
                 thinking about starting a Transition Enterprise (even if they don't wish to use the label) or anyone involved in supporting 
                 them. It provides information on the start-up process and the wealth of support that is available. To download a copy of 
                 the guide please click here

@@ -1,5 +1,42 @@
 /* filters.js*/
 
+app.filter('sortCol', function($filter){
+	
+	var newArr = [];
+
+	return function (_d,_fName){
+
+		//console.log("::-->> SORT COL : " + _d);
+
+		
+		newArr = _d.sort(function(a,b){
+			//if(a.name < b.name) return -1;
+		    //if(a.name > b.name) return 1;
+		    if(a[_fName] < b[_fName]) return -1;
+		    if(a[_fName] > b[_fName]) return 1;
+		    return 0;
+		})
+
+		/*
+		angular.forEach(_d,function(d,i){
+			//
+			console.log("::-> " + d.name)
+
+		});
+		newArr = _d.reverse();
+		*/
+		//console.log("::-->> SORT COL : " + _d);
+		return newArr ;
+	}
+
+});
+
+app.filter('reverse', function() {
+  return function(items) {
+    return items.slice().reverse();
+  };
+});
+
 //numeric
 app.filter('numFormat', function() { 
 			return function (_val,_cur,_context,_size) { // Nine Zeroes for Billions 

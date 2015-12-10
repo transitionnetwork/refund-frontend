@@ -97,10 +97,10 @@ app.controller('appCtrl',function($scope,
     $scope.MaxFundNum = 0;
 
     $scope.splashOn = true;
-    $scope.scrnScroll = "hidden";
+    //$scope.scrnScroll = "overflow:hidden";
 
     $scope.splashGo = function(d){
-        $scope.scrnScroll = "auto";
+        //$scope.scrnScroll = "overflow:auto";
         $scope.splashOn = false;
         console.log("GO!");
     }
@@ -113,6 +113,23 @@ app.controller('appCtrl',function($scope,
     });
 
     //FUNCTIONS//////////////////////////
+    $scope.orderSort = 'provider';
+    
+    //$scope.orderSort.provider = true;
+    //$scope.orderSort.type = true;
+
+    $scope.changeOrder = function(_d){
+        /*
+        if ($scope.orderSort[_d]== true ){
+            $scope.orderSort[_d] = false;
+        }else{
+            $scope.orderSort[_d] = true;
+        }
+        */
+        $scope.orderSort = _d;
+        
+    }
+    
 
     //UPDATE SELECTOR MODEL///     
     $scope.updateIt2 = function(_key,_item){

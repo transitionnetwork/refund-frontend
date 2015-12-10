@@ -4,7 +4,43 @@ body{
 	font-family: 'Rokkitt', serif;
 	padding:0px;
 	/*overflow:hidden;*/
+	background:url(../../img/splashBg.jpg) center center no-repeat fixed #fff;
+	background-size : cover ;
+}
+a:link{
+	outline:none;
+}
+.flowOn{
+	overflow:auto;
+}
+.flowOff{
+	overflow:hidden;
+}
 
+.sortBtn{
+	/*background:none;*/
+	background:#c3d5d7;
+	font-size:10px;
+	/*width:30px;
+	height:15px;*/
+	border-radius:3px;
+	border:none;
+	padding:0px;
+	padding-left:3px;
+	padding-right:3px;
+	outline:none;
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+}
+.sBtnColor1{
+	color:#999;
+}
+.sBtnColor2{
+	color:#007681;
+}
+
+.col2 button,.col1 button{
+	float:right;
+	margin-right:20px;
 }
 
 /* splashPage */
@@ -73,6 +109,7 @@ button.splashBtn{
     cursor:pointer;
     outline:none;
 
+    box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 }
 .splashBtn:hover{
 	color:#000;
@@ -623,13 +660,14 @@ input[type=checkbox]:checked + label:before {
 .col{
 	float:left;
 	display:block;
+	outline:none;
 
 }
 .col1{
-	width:270px;
+	width:300px;
 }
 .col2{
-	width:270px;
+	width:320px;
 }
 .col3{
 	width:25px;
@@ -638,11 +676,11 @@ input[type=checkbox]:checked + label:before {
 	width:0px;/*85*/
 }
 .col5{
-	width:190px;
+	width:110px;
 	
 }
 .col6{
-	width:225px;
+	width:230px;
 	padding-top:5px;
 }
 .cellCol{
