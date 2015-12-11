@@ -40,8 +40,8 @@ a:link{
 }
 
 .col2 button,.col1 button{
-	float:right;
-	margin-right:20px;
+	float:left;
+	margin-left:-35px;
 }
 
 /* splashPage */
@@ -114,6 +114,7 @@ button.splashBtn{
 }
 .splashBtn:hover{
 	color:#000;
+	background:#73acb2;
 	cursor:pointer;
 }
 
@@ -665,10 +666,10 @@ input[type=checkbox]:checked + label:before {
 
 }
 .col1{
-	width:300px;
+	width:310px;
 }
 .col2{
-	width:320px;
+	width:310px;
 }
 .col3{
 	width:25px;
@@ -677,11 +678,11 @@ input[type=checkbox]:checked + label:before {
 	width:0px;/*85*/
 }
 .col5{
-	width:110px;
+	width:120px;
 	
 }
 .col6{
-	width:230px;
+	width:220px;
 	padding-top:5px;
 }
 .cellCol{
