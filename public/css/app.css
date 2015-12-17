@@ -46,6 +46,30 @@ a:link{
 
 /* splashPage */
 
+.mainSplashWrap{
+	float:left;
+	width:100%;
+	height:360px;
+}
+.mainSplashBtmWrap{
+	float:left;
+	width:100%;
+}
+.mainSplashL{
+	width:750px;
+	height:360px;
+	display:block;
+	float:left;
+	text-align:left;
+	padding-right:30px;
+}
+
+.chimpSplashR{
+	width:200px;
+	height:360px;
+	display:block;
+	float:left;
+}
 .splashPage{
 	position:absolute;
 	display:block;
@@ -69,9 +93,8 @@ a:link{
 }
 
 .splashBox{
-	
-	
 	width:1035px;
+	height:560px;
 	display:block;
 	margin:0px auto;
 	margin-top:40px;
@@ -82,8 +105,9 @@ a:link{
 	padding-right:40px;
 	padding-bottom:40px;
 	padding-top:20px;
-	font-size:18px;
+	font-size:16px;
 	text-align:center;
+	line-height:16px;
 }
 
 .jumboSplash{
@@ -95,6 +119,14 @@ a:link{
 button.splashBtn{
 	cursor:pointer;
 }
+.subBtn{
+	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+	background: #0a8e9d;
+}
+.subBtn:hover{
+	background:#73acb2;
+}
+
 .splashBtn{
     
     width: 120px;
@@ -224,6 +256,11 @@ ul, ol{
 
 }
 
+.main-box-inner-txt{
+	text-align:left;
+	width:100%;
+}
+
 .logo_TopLeft{
 	/*background:url(../../img/logo_LH_01.jpg) no-repeat;*/
 	width:850px;
@@ -284,12 +321,30 @@ ul, ol{
 	margin-bottom:12px;
 }
 
+	
 .txtBoxWrap{
 	width:160px;
 	height:auto;
 	display:block;
 	float:left;
 	padding-top:0px;
+}
+.txtBoxWrap_1{
+	width:300px;
+	height:auto;
+	display:block;
+	float:left;
+	padding-top:0px;
+}
+
+.txtBoxLH-LH{
+	width:550px;
+	padding-top:6px;
+}
+.txtBoxRH_2{
+	width:180px;
+	padding-left:20px;
+	padding-top:6px;
 }
 .boxSpacer{
 	display:block;
@@ -302,6 +357,15 @@ ul, ol{
 	font-size:16px;
 	display:block;
 	float:left;
+	padding-left:5px;
+	width:100%;
+}
+.txtBoxLabel div{
+	float:left;
+}
+.txtBoxTxt{
+	font-size:14px;
+	color:#131e29;
 	padding-left:5px;
 }
 .txtBoxBox{
@@ -344,18 +408,31 @@ ul, ol{
 .topTxt{
 	width:150px;
 }
+.LH-LH-TOP{
+	width:800px;
+	display:block;
+	float:left;
+	padding-top:16px;
+}
+
 .LH-LH{
 	width:160px;
-	height:150px;
+	height:260px;
 	display:block;
 	float:left;
 }
 
 .LH-RH{
-	width:240px;
+	width:280px;
 	display:block;
 	float:left;
-	padding-top:6px;
+	
+}
+.LH-RH_1{
+	width:290px;
+	display:block;
+	float:left;
+	
 }
 
 .txtH1{
@@ -380,6 +457,12 @@ ul, ol{
 .reLogo{
 	color:#007681;
 	font-weight: 700;
+	
+}
+.reLogoHead{
+	font-size:18px;
+	color:#007681;
+	font-weight: 700;
 }
 .reLogo2{
 	color:#666;
@@ -392,7 +475,7 @@ ul, ol{
 
 .totalFund{
 	background:#c3d5d7;
-	height:155px;
+	height:271px;
 	width:140px;
 	border-radius:8px;
 	margin-top:14px;
@@ -400,8 +483,12 @@ ul, ol{
 	box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
 	padding:10px;
 	text-align:left;
-	line-height:36px;
+	
 
+}
+.tFund{
+	margin-top:50px;
+	line-height:42px;
 }
 .totalFund hr{
 	color:#999;
@@ -415,11 +502,16 @@ ul, ol{
 }
 
 .txtRH_1{
-	padding-top:8px;
+	
 	width:230px;
 	float:left;
 
 }
+.txtRH_1_spacer{
+	height:80px;
+	display:block;
+}
+
 .txtRH_2{
 	/*background:#c3d5d6;*/
 	padding-top:8px;
@@ -433,6 +525,14 @@ ul, ol{
 	float:left;
 }
 /* radio buttons */
+.radioTxt{
+	margin-bottom:14px;
+	
+}
+.mTxt{
+	padding-right:30px;
+	
+}
 
 .radioList,.tableList{
 	list-style: none;
@@ -440,6 +540,7 @@ ul, ol{
 }
 .radioList{
 	padding-left:8px;
+
 }
 
 label {
