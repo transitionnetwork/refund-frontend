@@ -3,10 +3,14 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-<rect x="-2" y="-1.417" fill="#516D47" width="8.583" height="24.417"/>
 <g id="Layer_1_1_">
 </g>
-<rect x="13.417" y="-1.417" fill="#775C26" width="8.583" height="24.417"/>
 <g id="Layer_1_2_">
+</g>
+<g>
+	<path d="M1.912,11.821V2.9h1.257l2.859,4.513c0.662,1.045,1.178,1.985,1.601,2.898l0.026-0.013
+		C7.549,9.108,7.523,8.023,7.523,6.632V2.9h1.085v8.92H7.444L4.612,7.295C3.989,6.301,3.394,5.283,2.944,4.316L2.904,4.33
+		C2.97,5.454,2.997,6.527,2.997,8.009v3.812H1.912z"/>
+	<path d="M12.417,2.9v8.92h-1.152V2.9H12.417z"/>
 </g>
 </svg>

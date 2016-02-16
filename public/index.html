@@ -13,6 +13,9 @@
     <!-- CSS -->
     <!-- google font -->
     <link href='https://fonts.googleapis.com/css?family=Rokkitt:400,700' rel='stylesheet' type='text/css'>
+    
+    <!-- Begin MailChimp Signup Form -->
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-081711.css" rel="stylesheet" type="text/css">
 
     <!-- angucomplete-->
     <link href="../css/angular/angucomplete.css" rel="stylesheet" type="text/css">
@@ -72,36 +75,54 @@
       </div>
       
       <!-- -->
-      <!--
-      <div class="row ">
-      		<div class="headerTXT_LH">
-          
-            <h5 class="titleShift">Filters:</h5>
-      		</div>
-      		<div class="headerTXT_RH">
-      			
-      		</div>
-
-      </div>
-      -->
+     
 
       <div class="jumbotron row marketing tableBox">
       	<!-- -->
       
-      <div class="col-lg-6 box-inner-txt">
+      <div class="col-lg-12 box-inner-txt">
         <div class="LH-LH">
           <div class="totalFund">
-            <span class="txtH2 reLogo">Funds:</span>
-            <br/>
-            <span class="txtH2-1 reLogo2">{{sreenResNum}} </span>
-            <span class="reLogo2">of</span>
-            <span class="txtH2-2 reLogo3">{{dataLength}} </span>
+            <!--<span class="txtH2 reLogo">Funds:</span>-->
+            <div class="txtBoxLabel reLogoHead">
+              Funds:
+            </div>
+            <div class="txtBoxTxt">
+              Given your filter choices the total number of funds we have found are:
+            </div>
+            <div class="tFund">
+              <span class="txtH2-1 reLogo2">{{sreenResNum}} </span>
+              <span class="reLogo2">of</span>
+              <span class="txtH2-2 reLogo3">{{dataLength}} </span>
+            </div>
           </div>
         </div>
+        <div class="LH-LH-TOP">
+          <div class="txtBoxWrap_1 txtBoxLH-LH">
+                <div class="txtBoxLabel reLogoHead">
+                 Fund Filters:
+                </div>
+                <div class="txtBoxTxt mTxt">
+                  To search the database for specific funders, locations or funding types please enter details in one of the boxes below:
+                </div>
+            </div>
+            <!-- -->
+            <div class="txtBoxWrap txtBoxRH_2">
+                <div class="txtBoxLabel reLogoHead">
+                    Types of Support:
+                    </div>
+                <div class="txtBoxTxt radioTxt">
+                    To search for a specific type of support please tick one or more of the boxes below:
+                    </div>
+            </div>
+        </div>
         <div class="LH-RH">
-            <div class="txtBoxWrap">
+            
+            <div class="txtBoxWrap_1">
                   <div class="txtBoxLabel">
-                    Fund Provider:
+                    <div>
+                      Fund Provider:
+                    </div>
                      <div class="icons infoOn infoLH"
                        tooltip="{{infoHover.provider}}" 
                        tooltip-placement="right" 
@@ -123,9 +144,11 @@
               <!-- -->
               
     		<!-- -->
-    		<div class="txtBoxWrap">
+    		<div class="txtBoxWrap_1">
           		<div class="txtBoxLabel">
-          			Country:
+                <div>
+                  Country:
+                </div>
                 <div class="icons infoOn infoLH"
                        tooltip="{{infoHover.countries}}" 
                        tooltip-placement="right" 
@@ -150,128 +173,85 @@
               </div>
           </div>
           <!-- -->
-		</div>
-		<!-- -->
-    
-		<!-- -->
-		<div class="txtBoxWrap btmBox">
-      		<div class="txtBoxLabel">
-      			Description Search:
+          <div class="txtBoxWrap_1 btmBox">
+          <div class="txtBoxLabel">
+            <div>
+             Description Search:
+            </div>
             <div class="icons infoOn infoLH"
                        tooltip="{{infoHover.desc}}" 
                        tooltip-placement="right" 
                         ></div>
-      		</div>
-      		<div class="input-group input-group-lg txtBoxBox inputTxt">
+          </div>
+          <div class="input-group input-group-lg txtBoxBox inputTxt">
           
           <input type="search" 
                  ng-model="selector.description" 
                  placeholder="Search free text"
                  class="form-control text-box">
-			  <!--<input type="text" class="form-control text-box" placeholder="Other words.." aria-describedby="sizing-addon1">-->
-			</div>
+      </div>
+    </div>
 		</div>
 		<!-- -->
-		    
-
-
-      </div> <!-- /col-lg-6 box-inner-txt -->
-      <div class="col-lg-6 box-inner-txt">
-      		<div class="txtRH_1">
-           
-      			<!--<span class="txtH2" >Org. Type</span>-->
-        		<!--
-            	 <ul class="radioList">
-        			 	<li>
-  					    <input id="profit" 
-                       type="checkbox" 
-                       ng-model="checkboxModel.profit"
-                       name="profit" 
-                       >
-  					    <label class="check" for="profit">Profit</label>
-                
-  				    </li>
-  				    <li>
-  					    <input id="nonprofit" 
-                       type="checkbox" 
-                       ng-model="checkboxModel.nonprofit"
-                       name="nonprofit" 
-                       >
-  					    <label class="check" for="nonprofit">Non-profit</label>
+      <div class="LH-RH_1">
+      
+      
+          		<div class="txtRH_1">
+              
                
-  				    </li>
-              <li>
-                <input id="other" 
-                       type="checkbox" 
-                       ng-model="checkboxModel.other"
-                       name="other" 
-                       >
-                <label class="check" for="other">Other</label>
-               
-              </li>
-  				  </ul>
-            -->
-        <div class="txtBoxWrap">
-                  <div class="txtBoxLabel topTxt">
-                    Fund Name/ Type:
-                    <div class="icons infoOn infoLH"
-                       tooltip="{{infoHover.fType}}" 
-                       tooltip-placement="right" 
-                        ></div> 
+          			
+              <div class="txtBoxWrap">
+                        <div class="txtBoxLabel topTxt">
+                          <div>
+                            Fund Name/ Type:
+                          </div>
+                          <div class="icons infoOn infoLH"
+                             tooltip="{{infoHover.fType}}" 
+                             tooltip-placement="right" 
+                              ></div> 
+                        </div>
+                        <!-- -->
+                        <div class="inputWrap1">
+                          <input type="search" 
+                             ng-model="selector.name" 
+                             placeholder="Search free text"
+                             class="form-control text-box inputTxt">
+                        </div>
+                        
+                        
+                    </div>
+            <div class="boxSpacer">
+              <!-- -->
+            </div>
+            <div class="txtBoxWrap">
+                      <div class="txtBoxLabel">
+                        <div>
+                          Specific Location:
+                        </div>
+                        <div class="icons infoOn infoLH"
+                           tooltip="{{infoHover.specLoc}}" 
+                           tooltip-placement="right" 
+                            ></div> 
+                      </div>
+                      <!-- -->
+                      <div class="inputWrap1">
+                        <input type="search" 
+                           ng-model="selector.locations" 
+                           placeholder="Search free text"
+                           class="form-control text-box inputTxt">
+                      </div>
+                      
+                      
                   </div>
-                  <!-- -->
-                  <div class="inputWrap1">
-                    <input type="search" 
-                       ng-model="selector.name" 
-                       placeholder="Search free text"
-                       class="form-control text-box inputTxt">
-                  </div>
-                  
-                  
-              </div>
-        <div class="boxSpacer">
-          <!-- -->
-        </div>
-        <div class="txtBoxWrap">
-                  <div class="txtBoxLabel">
-                    Specific Location:
-                    <div class="icons infoOn infoLH"
-                       tooltip="{{infoHover.specLoc}}" 
-                       tooltip-placement="right" 
-                        ></div> 
-                  </div>
-                  <!-- -->
-                  <div class="inputWrap1">
-                    <input type="search" 
-                       ng-model="selector.locations" 
-                       placeholder="Search free text"
-                       class="form-control text-box inputTxt">
-                  </div>
-                  
-                  
-              </div>
-         <!--   
-        <div class="txtBoxNumWrap" >
-              <div class="txtBoxLabel">
-                Max Fund Size:
-                <div class="icons infoOn infoLH"
-                       tooltip="{{infoHover.maxFund}}" 
-                       tooltip-placement="right" 
-                        ></div> 
-                </div>
-                <div class="input-group input-group-lg txtBoxNum">
-                    <input type="search" 
-                             ng-model="selector.max" 
-                             placeholder="{{selector.max}}"
-                             class="form-control text-box-num">
-                             
-                 </div>
-              </div>
-          -->
-      		</div>
-          
+         
+      		  </div>
+          </div> 
       		<div class="txtRH_2">
       			<!--<span class="txtH2">Fund Type</span>-->
+            
+            <div class="radioSpacer">
+              
+            </div>
       			<ul class="radioList">
       			 	<li >
 					    
@@ -752,26 +732,69 @@
           <!-- -->
             <div class="splashBox jumboSplash ">
               <div class="splashTxt">
-                <h2>Hello and welcome to the REconomy funding database. </h2>
-                <br/>
-                The database contains over 200 funds focused on providing grants, equity and social investment to Transition-orientated funds (TOF).
-                <br/>
-                To access the database click on the <strong>Start Now</strong> button below.
-                <br/><br/>
-                We’ve also put together a guide called <a href="http://www.reconomy.org/wp-content/uploads/2015/08/Transition_Enterprise_Handbook_FINAL-v2.pdf" target="_blank">The Transition Enterprise Guide</a> which is packed full of information for anyone 
-                thinking about starting a Transition Enterprise (even if they don't wish to use the label) or anyone involved in supporting 
-                them. It provides information on the start-up process and the wealth of support that is available. To download a copy of 
-                the guide please click here
-                <br/>
-                If you have comments / updates then please <a href="mailto:lauraouthart@transitionnetwork.org">email</a>
-                <br/><br/>
-                <button ng-click="splashGo()" class="splashBtn">
-                  Start Now
-                </button>
-                <br/>
-                <footer class="footer">
-                  <p>&copy; REconomy 2015</p>
-                </footer>
+              <div class="mainSplashWrap">
+                <div class="mainSplashL">
+                  <h2>Hello and welcome to the UK REconomy Funding Database</h2>
+                  <br/>
+                  The REconomy Funding database includes information on over 200 funds that provide grants, equity or other support to REconomy projects, Transition Enterprises & social enterprises working in the UK.  
+                  <br/><br/>
+                  This database has been developed to accompany our "Transition Enterprise Guide" which is packed full of information, inspiration and tips on how to start a REconomy project. Download the free guide <a href="http://www.reconomy.org/wp-content/uploads/2015/08/Transition_Enterprise_Handbook_FINAL-v2.pdf" target="_blank">here</a>. A full description of terms used in the database, as well as detailed information on each funder type can be found in the guide.
+
+                  <br/><br/>
+                  The full list of the funds can be found on the link below.  The search fields at the top of the page can be used to narrow the list down to find specific funders, funding types or funding available in your location. This is the first edition of the REconomy Funding Database which includes information gathered in November 2015. Look for the  second edition,  due out in spring 2016.
+                  <br/><br/>
+                  If you have any comments, suggestions or know of any funds or funders that you would like to see in the next edition of our database please contact:  <a href="mailto:lauraouthart@transitionnetwork.org">lauraouthart@transitionnetwork.org</a>
+                </div>
+                <div class="chimpSplashR">
+                    <div id="mc_embed_signup">
+                    <form action="//transitionnetwork.us1.list-manage.com/subscribe/post?u=766036b57dc1247e2964584bd&amp;id=cfc5a9cfde" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                      <h2>Subscribe to our mailing list</h2>
+                    <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
+                    <div class="mc-field-group">
+                      <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
+                    </label>
+                      <input type="email" value="" name="EMAIL" class="required email form-control" id="mce-EMAIL">
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-FNAME">First Name </label>
+                      <input type="text" value="" name="FNAME" class="form-control" id="mce-FNAME">
+                    </div>
+                    <div class="mc-field-group">
+                      <label for="mce-LNAME">Last Name </label>
+                      <input type="text" value="" name="LNAME" class="form-control" id="mce-LNAME">
+                    </div>
+                      <div id="mce-responses" class="clear">
+                        <div class="response" id="mce-error-response" style="display:none"></div>
+                        <div class="response" id="mce-success-response" style="display:none"></div>
+                      </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                        <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_766036b57dc1247e2964584bd_cfc5a9cfde" tabindex="-1" value=""></div>
+                        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button subBtn"></div>
+                        </div>
+                    </form>
+                    </div>
+                    <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
+                    <!--End mc_embed_signup-->
+                </div>
+              </div>
+                <div class="mainSplashBtmWrap">
+                    <div class="footerHead">
+                      <div>
+                        <i>This funding database was developed with the support of Friends Provident Foundation.  The REconomy Project is also supported by Polden-Puckham Charitable Foundation.</i>
+                      </div>
+                      <div class="center">
+                        <button ng-click="splashGo()" class="splashBtn">
+                          Start Now
+                        </button>
+                      </div>
+                      <div class="right">
+                        
+                      </div>
+                    </div>
+                    <div class="footer">
+                      <p>&copy; REconomy 2015</p>
+                    </div>
+                </div>
 
               </div>
             </div>

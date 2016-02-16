@@ -63,10 +63,10 @@ app.controller('appCtrl',function($scope,
     //INFO ROLLOVER ARRAY:
     $scope.infoHover = {};
     //LH
-    $scope.infoHover.provider = "Fund Provider: Please enter keywords as text to filter the list to find a specific fund provider.";
-    $scope.infoHover.countries = "Country: Please choose from the drop-down to filter the list for a specific country.";
+    $scope.infoHover.provider = "Fund Provider: To search the database for a specific fund provider enter the name of the fund provider here.";
+    $scope.infoHover.countries = "Country: To find funds only available to projects in your country choose from the drop down list below.";
     $scope.infoHover.desc =  "Description Search: Please enter keywords as text to filter the list to find a fund that have your keyword in their textual description.";
-    $scope.infoHover.fType = "Fund Name / Type: Please enter keywords as text to filter the list to find a specific fund name or type of fund that you are interested in."; 
+    $scope.infoHover.fType = "Fund Name / Type: To search for a specific fund name enter the name of fund here."; 
     $scope.infoHover.specLoc = "Specific Location: Please enter keywords as text to filter the list to find a fund that is specific to your location.";
     $scope.infoHover.maxFund = "Maximum Fund: Please enter maximum fund size."
     //RH
@@ -74,7 +74,7 @@ app.controller('appCtrl',function($scope,
     $scope.infoHover.debt = "Debt: Money that you do need to repay, normally with some interest and over a specified term";
     $scope.infoHover.equity = "Equity: Money that is invested in the enterprise (normally as shares), may be withdrawn at some point in the future and normally gives rights to the investor to receive a share of any profits. Equity also normally gives some degree of control over the enterprise."; 
     $scope.infoHover.support = "Business Support: Support from organisations in the form of investment readiness, business planning, financial advice and other areas that enable you to move towards developing your business.";
-    $scope.infoHover.platform = "Funding Platform: A platform (on or offline) that enables you to access finance through the platforms ability to communicate your needs to a large number of people / organisations that would be interested in your project.";
+    $scope.infoHover.platform = "Funding Platform: a platform (on or offline) that helps you access finance by promoting your project to large number of people/organisations who may be interested in investing.";
     $scope.infoHover.legislation = "Government Incentives: Incentive schemes provided by the UK Government to support organisations in raising finance to grow your business.";
     //TABLE
     $scope.infoHover.providerT = "Fund Provider & Fund Name: Click on any of the links below to get more detail.";
