@@ -49,7 +49,7 @@ a:link{
 .mainSplashWrap{
 	float:left;
 	width:100%;
-	height:360px;
+	/*height:360px;*/
 }
 .mainSplashBtmWrap{
 	float:left;
@@ -57,11 +57,12 @@ a:link{
 }
 .mainSplashL{
 	width:750px;
-	height:360px;
+	/*height:360px;*/
 	display:block;
 	float:left;
 	text-align:left;
 	padding-right:30px;
+	padding-bottom:20px;
 }
 
 .chimpSplashR{
@@ -94,7 +95,7 @@ a:link{
 
 .splashBox{
 	width:1035px;
-	height:495px;
+	height:570px;
 	display:block;
 	margin:0px auto;
 	margin-top:40px;
@@ -293,7 +294,7 @@ ul, ol{
 	font-size:36px;
 }
 .reTxt{
-	font-size:24px;
+	font-size:20px;
 	color:#999;
 }
 
